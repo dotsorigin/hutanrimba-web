@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="id" class="dihutan">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Republik Hutan Rimba</title>
+<meta name="description" content="Negeri hewan online yang dibangun follower @hutanrimbanet. Cari KTP Rimba-mu, baca Warta Rimba, dengar Radio Rimba, main Patroli Api.">
+<meta property="og:title" content="Republik Hutan Rimba">
+<meta property="og:description" content="Satu follower, satu pohon. Cari KTP Rimba-mu di sini.">
+<meta property="og:image" content="../img/group.webp">
+<meta name="theme-color" content="#1e5536">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Lilita+One&family=Fredoka:wght@500;600;700&family=Caveat:wght@700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --meja: #1e5536;
+  --meja-gelap: #143d26;
+  --map: #e6d7a3;
+  --map-tua: #cdb978;
+  --kertas: #fbf7e9;
+  --garis: #d9cfae;
+  --tinta: #1b2a22;
+  --tinta-pudar: #55604f;
+  --merah: #c2312a;
+  --biru: #1f4f9e;
+  --kuning: #ffd23f;
+  --display: "Lilita One", "Arial Rounded MT Bold", sans-serif;
+  --ketik: "Courier Prime", "Courier New", monospace;
+  --tangan: "Caveat", cursive;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 64px; }
+body {
+  margin: 0; color: var(--tinta); font: 400 16.5px/1.55 var(--ketik);
+  background: var(--meja);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+  padding-bottom: env(safe-area-inset-bottom);
+}
+a { color: inherit; text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--kuning); outline-offset: 3px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.05; margin: 0; letter-spacing: .005em; }
+p { margin: 0 0 .8em; }
+
+/* ---------- header ---------- */
+.top { position: sticky; top: 0; z-index: 20; background: var(--meja-gelap); border-bottom: 3px solid var(--kuning); padding-top: env(safe-area-inset-top); }
+.top .bar { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; gap: 10px; padding: 8px 14px 0; }
+.seal { width: 40px; height: 40px; border-radius: 50%; background: var(--kuning); border: 2px dashed var(--meja-gelap); box-shadow: 0 0 0 2px var(--kuning); overflow: hidden; flex: none; }
+.seal img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; transform: scale(1.35) translateY(8%); }
+.brand { color: #fff; text-decoration: none; font-family: var(--display); font-size: 20px; line-height: 1; }
+.brand small { display: block; font: 400 12px var(--ketik); color: #b9dcc4; margin-top: 3px; }
+.ig { margin-left: auto; color: var(--kuning); font: 700 14px var(--ketik); text-decoration: none; white-space: nowrap; }
+nav.tabs { max-width: 1080px; margin: 0 auto; display: flex; gap: 4px; overflow-x: auto; padding: 8px 14px 0; scrollbar-width: none; }
+nav.tabs::-webkit-scrollbar { display: none; }
+nav.tabs a { flex: none; text-decoration: none; background: var(--map); color: var(--tinta); font: 700 14px var(--ketik); padding: 7px 13px 6px; border-radius: 9px 9px 0 0; border: 1px solid var(--map-tua); border-bottom: 0; }
+nav.tabs a:nth-child(even) { background: #efe4bc; }
+nav.tabs a.daftar { background: var(--kuning); }
+
+main { max-width: 1080px; margin: 0 auto; padding: 22px 14px 40px; }
+
+/* ---------- paper ---------- */
+.folder { margin: 0 auto 34px; max-width: 820px; position: relative; }
+.folder > .tab { display: inline-block; background: var(--map); border: 1px solid var(--map-tua); border-bottom: 0; border-radius: 10px 10px 0 0; padding: 6px 16px 4px; font: 700 14px var(--ketik); margin-left: 14px; }
+.sheet { background: var(--kertas); border-radius: 3px; box-shadow: 0 1px 0 var(--garis), 0 12px 26px -10px rgba(0,0,0,.55); padding: 22px 18px 24px; position: relative; }
+.folder > .sheet { border-top: 8px solid var(--map); }
+.sheet h2 { font-size: clamp(30px, 8vw, 44px); margin-bottom: 6px; }
+.lead { color: var(--tinta-pudar); max-width: 62ch; }
+.nomor { font-size: 13px; color: var(--tinta-pudar); margin-bottom: 14px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 10px 18px; border-radius: 8px; border: 2px solid var(--tinta); background: var(--kertas); font: 700 16px var(--ketik); text-decoration: none; cursor: pointer; box-shadow: 3px 3px 0 var(--tinta); transition: transform .12s, box-shadow .12s; }
+.btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--tinta); }
+.btn.utama { background: var(--kuning); }
+.btn.hijau { background: var(--meja); color: #fff; }
+.btn[disabled] { opacity: .45; cursor: default; }
+.stamp { position: absolute; font-family: var(--display); color: var(--merah); border: 4px solid var(--merah); border-radius: 8px; padding: 4px 12px 2px; transform: rotate(-12deg); opacity: .82; mix-blend-mode: multiply; pointer-events: none; letter-spacing: .04em; }
+.stamp.bulat { border-radius: 50%; width: 104px; height: 104px; display: grid; place-items: center; text-align: center; font-size: 15px; line-height: 1.05; padding: 0; outline: 2px solid var(--merah); outline-offset: -10px; }
+
+/* ---------- hero ---------- */
+.hero { max-width: 980px; margin: 0 auto 40px; display: grid; gap: 18px; }
+.surat { background: var(--kertas); padding: 22px 18px 26px; transform: rotate(-.8deg); box-shadow: 0 16px 34px -12px rgba(0,0,0,.6); position: relative; }
+.surat .kop { display: flex; align-items: center; gap: 12px; border-bottom: 3px double var(--tinta); padding-bottom: 10px; margin-bottom: 14px; }
+.surat .kop .seal { width: 54px; height: 54px; }
+.surat .kop b { font-family: var(--display); font-weight: 400; font-size: 21px; display: block; line-height: 1.05; }
+.surat .kop span { font-size: 12.5px; color: var(--tinta-pudar); }
+.surat h1 { font-size: clamp(40px, 11vw, 74px); line-height: .95; margin: 8px 0 14px; color: var(--meja); max-width: 11ch; }
+.foto { float: right; position: relative; margin: 0 0 10px 14px; width: 104px; background: #fff; padding: 6px 6px 18px; transform: rotate(4deg); box-shadow: 0 6px 14px -6px rgba(0,0,0,.5); }
+.foto::before { content: ""; position: absolute; top: -12px; left: 40px; width: 14px; height: 34px; border: 3px solid #9aa3a8; border-radius: 8px; }
+.foto img { aspect-ratio: 3/4; object-fit: cover; object-position: 50% 30%; background: #cfe4d6; width: 100%; }
+.foto i { position: absolute; bottom: 2px; left: 0; right: 0; text-align: center; font: 700 15px var(--tangan); color: var(--biru); font-style: normal; }
+.isian { list-style: none; padding: 0; margin: 0 0 18px; }
+.isian li { display: flex; gap: 6px; align-items: baseline; padding: 5px 0; }
+.isian li span { white-space: nowrap; }
+.isian li i { flex: 1; border-bottom: 2px dotted var(--garis); transform: translateY(-4px); }
+.isian li b { font: 700 19px var(--ketik); white-space: nowrap; }
+.isian li b.tulis { font: 700 26px var(--tangan); color: var(--biru); }
+.pohonbar { height: 22px; border: 2px solid var(--tinta); border-radius: 4px; background: repeating-linear-gradient(90deg, transparent 0 9px, var(--garis) 9px 10px); position: relative; overflow: hidden; margin: 2px 0 6px; }
+.pohonbar i { position: absolute; inset: 0 auto 0 0; background: var(--meja); min-width: 6px; }
+.pohonbar + small { font-size: 13px; color: var(--tinta-pudar); display: block; margin-bottom: 18px; }
+.aksi { display: flex; flex-wrap: wrap; gap: 12px; }
+.ttd { margin-top: 18px; font-size: 14px; color: var(--tinta-pudar); }
+.ttd b { display: block; font: 700 34px/1 var(--tangan); color: var(--biru); margin: 2px 0; }
+.surat .stamp.sah { right: 22px; bottom: 30px; font-size: 40px; animation: sah .55s cubic-bezier(.2,1.6,.4,1) .5s both; }
+@keyframes sah { 0% { transform: rotate(-12deg) scale(2.4); opacity: 0; } 60% { opacity: .9; } 100% { transform: rotate(-12deg) scale(1); opacity: .82; } }
+.pengumuman { background: var(--kuning); padding: 14px 16px; border: 2px solid var(--tinta); transform: rotate(.6deg); align-self: start; box-shadow: 4px 4px 0 var(--tinta); }
+.pengumuman b { font-family: var(--display); font-weight: 400; font-size: 22px; display: block; margin-bottom: 4px; }
+.pengumuman p { margin: 0 0 8px; font-size: 15px; }
+.pengumuman a { font-weight: 700; }
+@media (min-width: 860px) {
+  .hero { grid-template-columns: 1fr 280px; align-items: start; }
+  .surat { padding: 34px 40px 36px; }
+  .foto { width: 150px; margin-right: 10px; }
+  .pengumuman { margin-top: 40px; }
+}
+
+/* ---------- KTP ---------- */
+.ktp-grid { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr); }
+.ktp-grid > * { min-width: 0; }
+@media (min-width: 760px) { .ktp-grid { grid-template-columns: minmax(0, 1fr) 300px; align-items: start; } }
+.form label { display: block; font-weight: 700; margin-bottom: 6px; }
+.field { display: flex; border: 2px solid var(--tinta); border-radius: 8px; background: #fff; overflow: hidden; }
+.field span { padding: 12px 0 12px 12px; font-weight: 700; color: var(--tinta-pudar); }
+.field input { flex: 1; min-width: 0; border: 0; padding: 12px 10px; font-size: 18px; background: transparent; outline: none; }
+.field button { border: 0; border-left: 2px solid var(--tinta); background: var(--kuning); font-weight: 700; padding: 0 18px; cursor: pointer; }
+#msg { margin: 12px 0 0; min-height: 3em; font-size: 15.5px; }
+#msg b { background: #fff1a8; }
+#make { display: none; margin-top: 10px; padding: 12px; border: 2px dashed var(--garis); border-radius: 8px; }
+#make.show { display: block; }
+#make select { width: 100%; padding: 10px; border: 2px solid var(--tinta); border-radius: 8px; background: #fff; margin: 6px 0 10px; font-size: 16px; }
+.cardwrap { background: var(--meja-gelap); border-radius: 10px; padding: 10px; }
+#cardimg { width: 100%; aspect-ratio: 1080/1920; border-radius: 6px; background: #0f3322; object-fit: contain; }
+#cardimg.in { animation: masuk .4s ease-out; }
+@keyframes masuk { from { transform: translateY(14px) rotate(-2deg); opacity: .3; } }
+.cardbtns { display: flex; gap: 8px; margin-top: 10px; }
+.cardbtns .btn { flex: 1; min-width: 0; min-height: 44px; padding: 8px 10px; font-size: 14.5px; box-shadow: 2px 2px 0 var(--tinta); }
+.album { font-size: 14px; margin-top: 14px; }
+
+/* ---------- warta ---------- */
+.koran { background: #f0ede3; }
+.koran .masthead { text-align: center; border-bottom: 4px double var(--tinta); padding-bottom: 8px; margin-bottom: 12px; }
+.koran .masthead h2 { font-size: clamp(38px, 11vw, 64px); letter-spacing: .01em; margin: 0; }
+.koran .masthead div { display: flex; justify-content: space-between; gap: 8px; font-size: 12.5px; border-top: 1px solid var(--tinta); margin-top: 6px; padding-top: 4px; }
+.berita h3 { font-size: clamp(26px, 7vw, 38px); margin: 6px 0 10px; }
+.berita .isi { columns: 1; column-gap: 26px; }
+@media (min-width: 700px) { .berita .isi { columns: 2; } }
+.berita .isi p:first-child::first-letter { font-family: var(--display); float: left; font-size: 3.4em; line-height: .8; padding: 4px 6px 0 0; color: var(--merah); }
+.rubrik { display: grid; gap: 14px; margin-top: 16px; border-top: 2px solid var(--tinta); padding-top: 14px; }
+@media (min-width: 700px) { .rubrik { grid-template-columns: 1fr 1fr; } }
+.rubrik h4 { font: 700 15px var(--ketik); margin: 0 0 6px; text-decoration: underline; text-decoration-thickness: 2px; }
+.wargahari { display: flex; gap: 12px; align-items: center; background: #fff; border: 1px solid var(--garis); padding: 10px; cursor: pointer; text-align: left; width: 100%; }
+.wargahari img { width: 64px; height: 76px; object-fit: contain; background: #e3efe6; flex: none; }
+.teka button { border: 2px dashed var(--tinta); background: transparent; padding: 8px 12px; cursor: pointer; font-weight: 700; margin-top: 4px; }
+.teka .jwb { font: 700 26px var(--tangan); color: var(--biru); }
+.edisi { display: flex; justify-content: space-between; margin-top: 18px; gap: 10px; }
+.edisi .btn { min-height: 42px; font-size: 14.5px; }
+
+/* ---------- dekret ---------- */
+.tumpuk { display: grid; gap: 14px; }
+.sk { background: #fff; border: 1px solid var(--garis); padding: 16px 16px 18px; position: relative; box-shadow: 0 6px 12px -8px rgba(0,0,0,.45); }
+.sk:nth-child(odd) { transform: rotate(-.5deg); }
+.sk:nth-child(even) { transform: rotate(.6deg); }
+.sk small { color: var(--tinta-pudar); font-size: 12.5px; display: block; padding-right: 96px; }
+.sk h3 { font-size: 23px; margin: 4px 0 8px; padding-right: 70px; }
+.sk p { margin: 0; font-size: 15.5px; }
+.sk .stamp { right: 10px; top: 12px; font-size: 13px; border-width: 3px; padding: 3px 8px 1px; transform: rotate(9deg); }
+
+/* ---------- radio ---------- */
+.radio { background: #5b3a22; background-image: repeating-linear-gradient(92deg, rgba(0,0,0,.08) 0 3px, transparent 3px 11px); border-radius: 22px; padding: 18px; color: #f5ead2; box-shadow: inset 0 0 0 4px #7a5132, 0 16px 30px -12px rgba(0,0,0,.6); }
+.radio h2 { color: #ffe08a; font-size: clamp(30px, 8vw, 42px); }
+.radio .sub { color: #e8d4b0; font-size: 14px; }
+.panel { display: grid; gap: 14px; margin-top: 14px; }
+@media (min-width: 720px) { .panel { grid-template-columns: 220px 1fr; } }
+.speaker { aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, #2c1a0e 1.6px, transparent 2px) 0 0 / 9px 9px, #3b2516; border: 6px solid #2a170b; display: grid; place-items: center; max-width: 220px; width: 70%; margin: 0 auto; position: relative; }
+.speaker img { width: 46%; filter: drop-shadow(0 6px 6px rgba(0,0,0,.5)); }
+.radio.on .speaker img { animation: goyang .5s ease-in-out infinite alternate; }
+@keyframes goyang { from { transform: rotate(-6deg) translateY(0); } to { transform: rotate(6deg) translateY(-4px); } }
+.dial { background: #f1e2bb; color: var(--tinta); border-radius: 8px; padding: 12px; border: 3px solid #2a170b; }
+.dial .onair { display: inline-block; font: 700 12.5px var(--ketik); padding: 2px 8px; border-radius: 4px; background: #8a7a62; color: #fff; }
+.radio.on .dial .onair { background: var(--merah); }
+.dial .now { font-family: var(--display); font-size: 22px; margin: 6px 0 2px; }
+.dial .dj { font-size: 13.5px; color: var(--tinta-pudar); }
+.ctrl { display: flex; gap: 10px; align-items: center; margin-top: 12px; flex-wrap: wrap; }
+.ctrl input[type=range] { flex: 1; min-width: 120px; accent-color: var(--merah); }
+.lagu { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 6px; }
+.lagu button { width: 100%; text-align: left; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 6px; padding: 9px 10px; color: #f5ead2; cursor: pointer; display: flex; justify-content: space-between; gap: 8px; }
+.lagu button[aria-pressed=true] { background: #ffe08a; color: var(--tinta); }
+.naskah { margin-top: 12px; background: #fffaf0; color: var(--tinta); padding: 12px; border-radius: 4px; font-size: 14.5px; min-height: 7.5em; white-space: pre-wrap; }
+.naskah::after { content: "▌"; animation: kedip 1s steps(1) infinite; }
+@keyframes kedip { 50% { opacity: 0; } }
+.radio .catatan { font-size: 12.5px; color: #d9c49f; margin: 10px 0 0; }
+
+/* ---------- warga baru ---------- */
+.pas { display: grid; grid-template-columns: repeat(auto-fill, minmax(102px, 1fr)); gap: 10px; }
+.pas button { background: #fff; border: 1px solid var(--garis); padding: 6px 6px 8px; cursor: pointer; text-align: center; box-shadow: 0 3px 6px -4px rgba(0,0,0,.4); }
+.pas button:hover { border-color: var(--tinta); }
+.pas .ft { aspect-ratio: 4/5; background: var(--dc, #cfe4d6); display: grid; place-items: end center; overflow: hidden; }
+.pas .ft img { width: 86%; height: 92%; object-fit: contain; object-position: 50% 100%; }
+.pas b { display: block; font-size: 12.5px; margin-top: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pas small { display: block; font-size: 11.5px; color: var(--tinta-pudar); }
+.more { margin-top: 16px; text-align: center; }
+
+/* ---------- sensus ---------- */
+.distrik { display: grid; gap: 12px; }
+.drow { display: grid; grid-template-columns: 76px 1fr; gap: 12px; align-items: center; border-bottom: 1px dashed var(--garis); padding-bottom: 12px; }
+.drow img, .drow .ph { width: 76px; height: 64px; object-fit: cover; border-radius: 4px; background: var(--dc); }
+.drow h3 { font-size: 21px; }
+.drow p { margin: 0 0 6px; font-size: 13.5px; color: var(--tinta-pudar); }
+.drow .bar { height: 14px; background: #efe9d3; border-radius: 3px; overflow: hidden; display: flex; align-items: center; }
+.drow .bar i { display: block; height: 100%; background: var(--dc); }
+.drow .bar + span { font-size: 13.5px; font-weight: 700; }
+.klub { margin-top: 20px; }
+.klub h3 { font-size: 24px; margin-bottom: 8px; }
+.klub ol { margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 20px; font-size: 14.5px; }
+@media (min-width: 700px) { .klub ol { columns: 3; } }
+.klub li { break-inside: avoid; display: flex; gap: 6px; padding: 3px 0; }
+.klub li i { flex: 1; border-bottom: 2px dotted var(--garis); transform: translateY(-5px); }
+
+/* ---------- musyawarah ---------- */
+.kotak { display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center; }
+.kotak svg { width: 96px; height: 96px; }
+
+/* ---------- game ---------- */
+.game { display: grid; gap: 16px; }
+@media (min-width: 760px) { .game { grid-template-columns: 1fr 330px; align-items: start; } }
+.board { position: relative; background: #12301f; border-radius: 10px; overflow: hidden; border: 3px solid var(--tinta); touch-action: none; max-width: 420px; width: 100%; margin: 0 auto; }
+.board canvas { display: block; width: 100%; height: auto; }
+.board .layar { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 20px; background: rgba(10,30,18,.78); color: #fff; }
+.board .layar[hidden] { display: none; }
+.board .layar h3 { font-size: 32px; color: var(--kuning); margin-bottom: 8px; }
+.board .layar p { font-size: 15px; }
+.skor { display: flex; justify-content: space-between; font-weight: 700; font-size: 14.5px; margin: 8px auto 0; max-width: 420px; }
+.aturan li { margin-bottom: 6px; }
+
+/* ---------- cara ---------- */
+.langkah { list-style: none; counter-reset: l; padding: 0; margin: 0; display: grid; gap: 12px; }
+.langkah li { counter-increment: l; display: grid; grid-template-columns: 46px 1fr; gap: 12px; align-items: start; }
+.langkah li::before { content: counter(l); width: 46px; height: 46px; border-radius: 50%; border: 3px solid var(--merah); color: var(--merah); display: grid; place-items: center; font: 26px var(--display); transform: rotate(-8deg); }
+.langkah b { display: block; font-size: 17px; }
+.peringatan { margin-top: 16px; padding: 12px; border-left: 5px solid var(--merah); background: #fbeae6; font-size: 14.5px; }
+
+/* ---------- katalog ---------- */
+.katalog h3 { font-size: 22px; margin: 18px 0 8px; color: var(--dc); }
+.kat { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.kat div { text-align: center; font-size: 12.5px; }
+.kat img { width: 100%; aspect-ratio: 1; object-fit: contain; background: #fff; border: 1px solid var(--garis); padding: 6px; }
+.kat b { display: block; margin-top: 4px; line-height: 1.2; }
+.kat small { color: var(--tinta-pudar); }
+.kat .kepala img { border: 2px solid var(--merah); background: #fff3f0; }
+
+
+/* ---------- peta ---------- */
+.peta { position: relative; border: 3px solid var(--tinta); border-radius: 6px; overflow: hidden; background: #8fd16a; }
+.peta img { width: 100%; height: auto; }
+.pin { position: absolute; transform: translate(-50%, -100%); border: 0; background: none; padding: 0; cursor: pointer; display: flex; flex-direction: column; align-items: center; }
+.pin b { background: var(--kertas); border: 2px solid var(--tinta); border-radius: 6px; padding: 3px 8px 2px; font: 700 12.5px var(--ketik); white-space: nowrap; box-shadow: 2px 2px 0 var(--tinta); }
+.pin i { width: 14px; height: 14px; border-radius: 50%; background: var(--merah); border: 2px solid #fff; margin-top: 3px; box-shadow: 0 0 0 2px var(--tinta); }
+.pin[aria-pressed=true] b { background: var(--kuning); }
+.pinfo { margin-top: 14px; display: grid; grid-template-columns: 1fr; gap: 10px; }
+.pinfo h3 { font-size: 26px; color: var(--dc); }
+.pinfo p { margin: 0; }
+.wajah { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.wajah img { width: 40px; height: 48px; object-fit: contain; background: #fff; border: 1px solid var(--garis); }
+.wajah span { align-self: center; font-size: 13.5px; font-weight: 700; margin-left: 4px; }
+.berita figure { margin: 0 0 12px; }
+.berita figure img { width: 100%; aspect-ratio: 16/9; object-fit: cover; filter: grayscale(.35) contrast(1.05) sepia(.18); border: 1px solid var(--tinta); }
+.berita figcaption { font-size: 12.5px; color: var(--tinta-pudar); margin-top: 4px; font-style: italic; }
+
+
+/* ---------- dunia hutan ---------- */
+html.dihutan, html.dihutan body { overflow: hidden; }
+#hutan { position: fixed; inset: 0; z-index: 100; background: #c7ecb0; touch-action: none; user-select: none; -webkit-user-select: none; }
+#hutan[hidden] { display: none; }
+#hCanvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: pointer; }
+#hLabel { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hload { position: absolute; inset: 0; margin: 0; display: grid; place-items: center; text-align: center; padding: 20px; background: #c7ecb0; font: 28px var(--display); color: var(--meja); }
+.htop { position: absolute; top: calc(10px + env(safe-area-inset-top)); left: 10px; right: 170px; display: flex; gap: 8px; flex-wrap: wrap; pointer-events: none; }
+.hchip { background: var(--kertas); border: 2px solid var(--tinta); border-radius: 8px; padding: 6px 10px; font: 700 13.5px var(--ketik); box-shadow: 2px 2px 0 var(--tinta); }
+.hjam { pointer-events: auto; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; color: var(--tinta); }
+.hjam i { width: 12px; height: 12px; border-radius: 50%; background: #ffd23f; box-shadow: 0 0 0 2px var(--tinta); }
+.hjam[data-f="pagi"] i { background: #ffb87a; }
+.hjam[data-f="sore"] i { background: #ff8c5c; }
+.hjam[data-f="malam"] { background: #24315a; color: #fffaf0; }
+.hjam[data-f="malam"] i { background: #e8ecff; box-shadow: inset -4px -2px 0 #9aa8d8, 0 0 0 2px var(--tinta); }
+.hchip.biji { background: var(--kuning); display: inline-flex; align-items: center; gap: 6px; }
+.hchip.biji i { width: 12px; height: 16px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: #8a5530; box-shadow: inset -3px -3px 0 rgba(0,0,0,.2); }
+.hkeluar { position: absolute; top: calc(10px + env(safe-area-inset-top)); right: 10px; background: var(--kertas); border: 2px solid var(--tinta); border-radius: 8px; padding: 6px 10px; font: 700 13.5px var(--ketik); box-shadow: 2px 2px 0 var(--tinta); cursor: pointer; z-index: 3; }
+.hjoy { position: absolute; left: 14px; bottom: calc(80px + env(safe-area-inset-bottom)); width: 124px; height: 124px; border-radius: 50%; background: rgba(251,247,233,.55); border: 2px solid rgba(27,42,34,.55); display: none; place-items: center; touch-action: none; -webkit-user-select: none; user-select: none; }
+.hjoy i { width: 54px; height: 54px; border-radius: 50%; background: var(--kuning); border: 2px solid var(--tinta); box-shadow: 2px 2px 0 var(--tinta); display: block; transition: transform .08s; }
+.hjoy.on i { transition: none; }
+@media (pointer: coarse) { .hjoy { display: grid; } }
+.hzoom { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; }
+.hzoom button { width: 48px; height: 48px; border: 2px solid var(--tinta); border-radius: 10px; background: var(--kertas); font: 700 26px/1 var(--ketik); box-shadow: 2px 2px 0 var(--tinta); cursor: pointer; }
+.hzoom button:disabled { opacity: .4; cursor: default; }
+.hpeta { position: absolute; top: calc(10px + env(safe-area-inset-top)); right: 10px; background: var(--kuning); border: 2px solid var(--tinta); border-radius: 8px; padding: 6px 10px; font: 700 13px var(--ketik); box-shadow: 2px 2px 0 var(--tinta); cursor: pointer; }
+.hbawah { position: absolute; left: 10px; right: 10px; bottom: calc(14px + env(safe-area-inset-bottom)); display: flex; gap: 10px; align-items: center; }
+.hbawah .btn { min-height: 50px; }
+.hbawah #hAct { flex: 1; max-width: 360px; margin-left: auto; }
+#hutan [hidden] { display: none !important; }
+.hmusik { display: grid; place-items: center; }
+.hmusik .garis { display: none; }
+.hmusik.mati { opacity: .7; }
+.hmusik.mati .garis { display: inline; }
+.hmasuk { text-align: center; }
+.hmasuk img { width: 132px; height: 132px; object-fit: contain; margin: 4px auto 0; display: block; }
+.hmasuk h3 { margin: 4px 0 2px; }
+.hmasuk p { margin: 0 0 14px; }
+.btn.besar { width: 100%; min-height: 56px; font-size: 18px; }
+.hkode { font: 700 22px/1.3 var(--ketik); letter-spacing: .04em; text-align: center; background: #fffaf0; border: 2px dashed var(--tinta); border-radius: 10px; padding: 14px 10px; margin: 8px 0 14px; word-break: break-word; user-select: all; }
+.hlink { background: none; border: 0; padding: 12px 6px 2px; font: 700 13px var(--ketik); color: var(--tinta); text-decoration: underline; cursor: pointer; }
+.htamu { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: center; margin-top: 14px; padding-top: 14px; border-top: 2px dashed rgba(27,42,34,.25); }
+.htamu span { font-size: 12.5px; line-height: 1.4; opacity: .8; }
+#hAct { animation: hpop .25s ease-out, hglow 1.6s ease-in-out .3s infinite; display: grid; grid-template-columns: 1fr auto; align-items: center; text-align: left; gap: 0 10px; min-height: 62px; padding: 8px 14px; }
+#hAct small { grid-column: 1; font: 700 11px var(--ketik); opacity: .75; }
+#hAct span { grid-column: 1; font-size: 17px; line-height: 1.15; }
+#hAct kbd { grid-column: 2; grid-row: 1 / span 2; font: 700 15px var(--ketik); background: #fffaf0; border: 2px solid var(--tinta); border-bottom-width: 4px; border-radius: 6px; padding: 3px 9px; }
+@keyframes hglow { 50% { box-shadow: 2px 2px 0 var(--tinta), 0 0 0 6px rgba(255,210,63,.45); } }
+@media (prefers-reduced-motion: reduce) { #hAct { animation: none; } }
+@keyframes hpop { from { transform: translateY(10px) scale(.92); opacity: 0; } }
+.htoast { position: absolute; left: 50%; top: calc(64px + env(safe-area-inset-top)); transform: translateX(-50%); background: var(--tinta); color: #fff; padding: 8px 14px; border-radius: 8px; font: 700 14px var(--ketik); max-width: 90vw; text-align: center; margin: 0; }
+.hdlg { position: absolute; inset: 0; background: rgba(10,30,18,.55); display: grid; place-items: center; padding: 14px; z-index: 5; overflow-y: auto; }
+.hdlg[hidden] { display: none; }
+.hdlgin { position: relative; background: var(--kertas); border-top: 8px solid var(--map); border-radius: 4px; box-shadow: 0 18px 40px -12px rgba(0,0,0,.7); padding: 20px 18px 18px; width: min(440px, 100%); max-height: calc(100vh - 28px); overflow-y: auto; }
+.hdlgin.wide { width: min(560px, 100%); }
+.hdlgin h3 { font-size: 28px; margin: 0 34px 4px 0; }
+.hsub { color: var(--tinta-pudar); font-size: 14.5px; }
+.hx { position: absolute; top: 8px; right: 8px; width: 40px; height: 40px; border: 2px solid var(--tinta); border-radius: 8px; background: #fff; font: 700 22px/1 var(--ketik); cursor: pointer; }
+.hrow { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.hnote { font-size: 13px; color: var(--tinta-pudar); margin-top: 12px; }
+.herr { color: var(--merah); font-weight: 700; }
+.hbesar { font: 40px/1 var(--display); color: var(--meja); margin: 8px 0 4px; }
+.hlist { list-style: none; margin: 12px 0; padding: 0; display: grid; gap: 8px; }
+.hlist li { padding: 8px 10px; border: 2px solid var(--meja); border-radius: 10px; background: #fffaf0; }
+.hlist small { opacity: .7; }
+.hstat { float: right; font-size: 12px; padding: 1px 8px; border-radius: 99px; background: #f2e6c8; }
+.hstat.ok { background: #bfe6a8; }
+.hstempel { display: inline-block; font-family: var(--display); color: var(--merah); border: 3px solid var(--merah); border-radius: 6px; padding: 4px 10px 2px; transform: rotate(-4deg); margin: 10px 0 0; }
+.hkepala { display: grid; grid-template-columns: 84px 1fr; gap: 12px; align-items: center; margin: 8px 0; }
+.hkepala img { width: 84px; height: 100px; object-fit: contain; background: #e3efe6; border: 1px solid var(--garis); }
+.hkepala p { margin: 0; }
+.hgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; margin-top: 10px; }
+.hgrid.kecil { grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); max-height: 44vh; overflow-y: auto; padding: 2px; }
+.hitem { background: #fff; border: 1px solid var(--garis); padding: 6px; cursor: pointer; text-align: center; font: inherit; }
+.hitem:hover { border-color: var(--tinta); }
+.hitem.on { border: 2px solid var(--merah); background: #fff3f0; }
+.hitem canvas, .hitem img { width: 100%; aspect-ratio: 1; object-fit: contain; display: block; }
+.hitem b { display: block; font-size: 12.5px; line-height: 1.2; margin-top: 4px; }
+.hitem small { font-size: 12px; color: var(--tinta-pudar); }
+.hgame { position: relative; max-width: 330px; margin: 6px auto 0; border: 3px solid var(--tinta); border-radius: 8px; overflow: hidden; }
+.hgame canvas { width: 100%; height: auto; display: block; touch-action: none; }
+.hlayar { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; background: rgba(10,30,18,.72); color: #fff; padding: 16px; }
+.hlayar[hidden] { display: none; }
+.hlayar .hbesar { color: var(--kuning); }
+.hskor { display: flex; justify-content: space-between; max-width: 330px; margin: 8px auto 0; font-weight: 700; font-size: 14px; }
+.hlv { list-style: none; padding: 0; margin: 10px 0; }
+.hlv li { display: flex; justify-content: space-between; padding: 8px 10px; border: 1px dashed var(--garis); margin-bottom: 6px; }
+.hlv li.done { background: #eaf6e4; border-style: solid; border-color: #9fcf8f; }
+.hkoran { background: #f0ede3; margin: -4px -4px 0; padding: 4px 6px; }
+.hkoran h3 { text-align: center; font-size: 34px; margin: 0 30px 4px; border-bottom: 4px double var(--tinta); padding-bottom: 6px; }
+.hmeta { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--tinta-pudar); margin: 0 0 8px; }
+.hkoran figure { margin: 0 0 8px; }
+.hkoran figure img { width: 100%; aspect-ratio: 16/9; object-fit: cover; filter: grayscale(.35) sepia(.18); border: 1px solid var(--tinta); }
+.hkoran figcaption { font-size: 12px; color: var(--tinta-pudar); font-style: italic; }
+.hkoran h4 { font: 24px/1.1 var(--display); margin: 6px 0 8px; }
+.hkoran p { font-size: 14.5px; }
+.hteka { border-top: 2px solid var(--tinta); padding-top: 8px; margin-top: 8px; }
+.hjawab { font: 700 26px var(--tangan); color: var(--biru); }
+.hlagu { display: grid; gap: 6px; margin-top: 10px; }
+.hlagu .btn { min-height: 42px; font-size: 14px; box-shadow: 2px 2px 0 var(--tinta); justify-content: flex-start; }
+.hlagu .btn.on { background: var(--kuning); }
+.hktp { background: var(--meja-gelap); border-radius: 8px; padding: 8px; margin-top: 8px; }
+.hktp img { width: 100%; max-height: 62vh; object-fit: contain; display: block; margin: 0 auto; }
+.hlv li.done b::after { content: " ✓"; color: var(--meja); }
+nav.tabs a.masuk { background: var(--merah); color: #fff; border-color: var(--merah); }
+
+footer.kaki { max-width: 820px; margin: 0 auto; color: #cfe6d6; font-size: 13.5px; padding: 0 14px 40px; }
+footer.kaki b { color: #fff; }
+footer.kaki ul { padding-left: 18px; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="bar">
+    <span class="seal"><img src="../img/orangutan.webp" alt=""></span>
+    <a class="brand" href="#beranda">Republik Hutan Rimba<small>Negeri hewan online</small></a>
+    <a class="ig" href="https://www.instagram.com/hutanrimbanet/">@hutanrimbanet</a>
+  </div>
+  <nav class="tabs" aria-label="Kantor-kantor Republik">
+    <a class="masuk" href="#hutan" data-hutan>Masuk Hutan</a><a href="#peta">Peta</a><a href="#ktp">KTP Rimba</a><a href="#warta">Warta</a><a href="#dekret">Dekret</a><a href="#radio">Radio</a><a href="#warga">Warga Baru</a><a href="#sensus">Sensus</a><a href="#main">Main</a><a href="#katalog">Katalog</a><a class="daftar" href="#daftar">Jadi Warga</a>
+  </nav>
+</header>
+
+<main id="beranda">
+  <section class="hero">
+    <article class="surat">
+      <div class="kop"><span class="seal"><img src="../img/orangutan.webp" alt=""></span><div><b>Republik Hutan Rimba</b><span>Kantor Kepala Rimba, Rumah Pohon No. 1</span></div></div>
+      <p class="nomor">Nomor: 001/RHR/XI/2026<br>Perihal: Selamat datang, warga!</p>
+      <figure class="foto"><img src="../img/orangutan.webp" alt="Orangutan terakhir, Kepala Rimba"><i>Kepala Rimba</i></figure>
+      <h1>Negeri hewan yang dibangun follower.</h1>
+      <p class="lead" style="max-width:34ch">Hutan ini habis terbakar. Tinggal satu orangutan. Setiap kamu follow, satu pohon tumbuh dan kamu jadi warganya.</p>
+      <ul class="isian">
+        <li><span>Jumlah penduduk</span><i></i><b class="tulis" id="hPend">0</b><span>jiwa</span></li>
+        <li><span>Pohon tertanam</span><i></i><b class="tulis" id="hPohon">0</b><span>pohon</span></li>
+        <li><span>Spesies terdaftar</span><i></i><b id="hSp">0</b></li>
+      </ul>
+      <div class="pohonbar" role="img" id="pbar"><i id="pfill"></i></div>
+      <small id="ptext"></small>
+      <div class="aksi"><a class="btn utama" href="#hutan" data-hutan>Masuk ke hutan</a><a class="btn" href="#ktp">Cari KTP-mu</a></div>
+      <div class="ttd">Tertanda,<b>Orangutan</b>Kepala Rimba (satu-satunya)</div>
+      <span class="stamp sah">SAH</span>
+    </article>
+    <aside class="pengumuman" aria-label="Pengumuman">
+      <b>Pengumuman!</b>
+      <p id="pengText"></p>
+      <a href="#warta">Baca Warta Rimba</a>
+    </aside>
+  </section>
+
+
+  <section class="folder" id="peta">
+    <span class="tab">Badan Pertanahan Rimba</span>
+    <div class="sheet">
+      <h2>Peta Republik</h2>
+      <p class="lead">Begini wujud Hutan Rimba hari ini. Ketuk tanda merah buat lihat siapa saja yang tinggal di sana.</p>
+      <div class="peta" id="petaBox"><img src="../img/group.webp" alt="Peta Hutan Rimba dari atas: hutan lebat, rumah pohon, sabana, kampung, dan sungai"></div>
+      <div class="pinfo" id="pinfo" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="folder" id="ktp">
+    <span class="tab">Kantor Catatan Sipil</span>
+    <div class="sheet">
+      <h2>KTP Rimba</h2>
+      <p class="lead">Ketik username IG-mu. Kalau kamu sudah komen di Reels, KTP-mu sudah jadi. Tekan lama gambarnya buat simpan, lalu pasang di story dan tag @hutanrimbanet.</p>
+      <div class="ktp-grid">
+        <div class="form">
+          <form id="f" autocomplete="off">
+            <label for="q">Username Instagram</label>
+            <div class="field"><span>@</span><input id="q" name="q" inputmode="text" autocapitalize="none" spellcheck="false" placeholder="usernamekamu"><button type="submit">Cari</button></div>
+          </form>
+          <p id="msg" aria-live="polite"></p>
+          <div id="make">
+            <label for="pick">Mau jadi hewan apa?</label>
+            <select id="pick"></select>
+            <button type="button" class="btn" id="mk">Buat kartu calon warga</button>
+          </div>
+        </div>
+        <div>
+          <div class="cardwrap"><img id="cardimg" alt=""></div>
+          <div class="cardbtns">
+            <button type="button" class="btn utama main" id="dl" disabled>Simpan</button>
+            <button type="button" class="btn" id="sh" hidden>Bagikan</button>
+            <button type="button" class="btn" id="cp"><span>Caption</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="folder" id="warta">
+    <span class="tab">Pers Rimba</span>
+    <div class="sheet koran">
+      <div class="masthead"><h2>Warta Rimba</h2><div><span id="wEd"></span><span>Harga: 1 komen</span><span>Terbit tiap episode</span></div></div>
+      <article class="berita" aria-live="polite">
+        <h3 id="wJudul"></h3>
+        <figure><img id="wFoto" alt=""><figcaption id="wCap"></figcaption></figure>
+        <div class="isi" id="wIsi"></div>
+      </article>
+      <div class="rubrik">
+        <div><h4>Warga hari ini</h4><button type="button" class="wargahari" id="wWarga"></button></div>
+        <div class="teka"><h4>Teka-teki Biji Emas</h4><p id="wTeka"></p><button type="button" id="wBuka">Lihat jawaban</button><p class="jwb" id="wJwb" hidden></p></div>
+      </div>
+      <div class="edisi"><button type="button" class="btn" id="wPrev">Edisi lalu</button><button type="button" class="btn" id="wNext">Edisi baru</button></div>
+    </div>
+  </section>
+
+  <section class="folder" id="dekret">
+    <span class="tab">Sekretariat Negara</span>
+    <div class="sheet">
+      <h2>Dekret Kepala Rimba</h2>
+      <p class="lead">Aturan resmi Republik. Berlaku untuk semua warga, dari kancil sampai T-Rex.</p>
+      <div class="tumpuk" id="skList"></div>
+    </div>
+  </section>
+
+  <section class="folder" id="radio">
+    <span class="tab">Radio Republik Rimba</span>
+    <div class="radio" id="radioBox">
+      <h2>RRR 101.1 FM</h2>
+      <p class="sub">Suara dari Rumah Pohon. Musiknya dimainkan langsung di HP-mu.</p>
+      <div class="panel">
+        <div class="speaker"><img src="../img/kakatua.webp" alt="Kak Kakatua, penyiar"></div>
+        <div>
+          <div class="dial">
+            <span class="onair" id="rStat">Belum mengudara</span>
+            <div class="now" id="rNow">Pagi di Kanopi</div>
+            <div class="dj">Penyiar: Kak Kakatua, si paling cerewet se-rimba</div>
+            <div class="ctrl">
+              <button type="button" class="btn utama" id="rPlay">Putar musik</button>
+              <label class="sr" for="rVol">Volume</label><input type="range" id="rVol" min="0" max="100" value="70">
+            </div>
+          </div>
+          <ul class="lagu" id="rList"></ul>
+        </div>
+      </div>
+      <div class="naskah" id="rNaskah" aria-live="off"></div>
+      <p class="catatan">Pakai iPhone? Matikan mode senyap dulu supaya suaranya keluar.</p>
+    </div>
+  </section>
+
+  <section class="folder" id="warga">
+    <span class="tab">Kantor Imigrasi Rimba</span>
+    <div class="sheet">
+      <h2>Warga baru</h2>
+      <p class="lead">Yang paling baru pindah ke Hutan Rimba. Ketuk fotonya buat buka KTP-nya.</p>
+      <div class="pas" id="pasGrid"></div>
+      <div class="more"><button type="button" class="btn" id="pasMore">Tampilkan lebih banyak</button></div>
+    </div>
+  </section>
+
+  <section class="folder" id="sensus">
+    <span class="tab">Badan Sensus Rimba</span>
+    <div class="sheet">
+      <h2>Sensus distrik</h2>
+      <p class="lead">Setiap hewan tinggal di distrik sesuai habitat aslinya. Ini jumlah penduduk per distrik hari ini.</p>
+      <div class="distrik" id="dList"></div>
+      <div class="klub"><h3>Klub hewan</h3><p class="lead" style="font-size:14.5px">Satu klub untuk setiap spesies. Klub paling ramai di atas.</p><ol id="klub"></ol></div>
+    </div>
+  </section>
+
+  <section class="folder" id="musyawarah">
+    <span class="tab">Dewan Rimba</span>
+    <div class="sheet">
+      <div class="kotak">
+        <svg viewBox="0 0 96 96" aria-hidden="true"><rect x="10" y="34" width="76" height="54" rx="4" fill="#e6d7a3" stroke="#1b2a22" stroke-width="3"/><rect x="30" y="34" width="36" height="6" fill="#1b2a22"/><rect x="34" y="8" width="28" height="32" fill="#fff" stroke="#1b2a22" stroke-width="3" transform="rotate(8 48 24)"/><text x="48" y="72" text-anchor="middle" font-family="Lilita One, sans-serif" font-size="13" fill="#c2312a">SUARA</text></svg>
+        <div><h2>Musyawarah rimba</h2><p class="lead" style="margin:0">Kotak suara buat memilih bangunan berikutnya segera dibuka di sini. Sementara itu, komen teratas di Reels terbaru langsung dikerjakan.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="folder" id="main">
+    <span class="tab">Dinas Pemadam Rimba</span>
+    <div class="sheet">
+      <h2>Patroli Api</h2>
+      <p class="lead">Coba dulu di sini: bara api jatuh dari langit kering. Ketuk baranya sebelum kena pohon. Tiga pohon terbakar, patroli selesai.</p>
+      <div class="game">
+        <div>
+          <div class="board" id="board"><canvas id="cv" width="420" height="560" aria-label="Papan permainan Patroli Api"></canvas>
+            <div class="layar" id="layar"><div><h3 id="lJudul">Siap patroli?</h3><p id="lTeks">Padamkan bara sebanyak-banyaknya.</p><button type="button" class="btn utama" id="gMulai">Mulai patroli</button></div></div>
+          </div>
+          <div class="skor"><span>Padam: <b id="gSkor">0</b></span><span>Pohon: <b id="gNyawa">3</b></span><span>Rekor: <b id="gRekor">0</b></span></div>
+        </div>
+        <div>
+          <ol class="aturan">
+            <li>Ketuk bara yang jatuh. Bara besar butuh dua ketukan.</li>
+            <li>Bara yang lolos membakar satu pohon.</li>
+            <li>Makin lama, baranya makin cepat.</li>
+          </ol>
+          <p style="font-size:14.5px">Biji adalah koin permainan, bukan uang. Rekor tersimpan di HP-mu saja.</p>
+          <p><a class="btn hijau" href="#hutan" data-hutan>Masuk ke hutan</a></p>
+          <p style="font-size:14.5px">Di dalam hutan, kerja di Pos Pemadam menghasilkan Biji untuk upgrade rumah, beli topi, dan tanam pohon.</p>
+          <p style="font-size:14.5px">Game lari penuh dari Republik, <b>Lari Rimba</b>, sedang dibangun. Kabar terbarunya di Reels.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="folder" id="daftar">
+    <span class="tab">Formulir Pindah Datang</span>
+    <div class="sheet">
+      <h2>Cara jadi warga</h2>
+      <p class="lead">Gratis, tanpa daftar akun, tanpa password.</p>
+      <ol class="langkah">
+        <li><div><b>Follow @hutanrimbanet</b>Begitu follow, satu pohon baru tumbuh di Hutan Rimba.</div></li>
+        <li><div><b>Komen hewan pilihanmu di Reels terbaru</b>Semua yang komen langsung jadi warga. Orangutan sudah terisi, jadi yang pilih orangutan dijadikan Owa Kalimantan.</div></li>
+        <li><div><b>Ambil KTP Rimba-mu di sini</b>Data warga diperbarui setiap episode. Cari username-mu di <a href="#ktp">Kantor Catatan Sipil</a>.</div></li>
+      </ol>
+      <div class="peringatan">Republik tidak pernah minta password Instagram, nomor HP, atau alamat rumah. Kalau ada yang minta atas nama Hutan Rimba, itu bukan kami.</div>
+      <p style="margin-top:16px"><a class="btn hijau" href="https://www.instagram.com/hutanrimbanet/">Follow @hutanrimbanet</a></p>
+    </div>
+  </section>
+
+  <section class="folder" id="katalog">
+    <span class="tab">Arsip Satwa</span>
+    <div class="sheet katalog">
+      <h2>Katalog hewan</h2>
+      <p class="lead">Semua spesies yang sudah punya warga, dikelompokkan per distrik. Hewanmu belum ada? Komen saja, nanti dibuatkan.</p>
+      <div id="katList"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="kaki">
+  <p><b>Republik Hutan Rimba</b> adalah negeri fiksi dari Reels <a href="https://www.instagram.com/hutanrimbanet/">@hutanrimbanet</a>. Misinya: satu juta pohon.</p>
+  <ul>
+    <li>Biji adalah koin permainan, bukan uang sungguhan.</li>
+    <li>Kami tidak pernah minta password, nomor HP, atau alamat.</li>
+    <li>Tanpa iklan. Tanpa akun.</li>
+  </ul>
+</footer>
+
+<div id="hutan">
+  <canvas id="hCanvas" aria-label="Dunia Hutan Rimba. Ketuk tanah untuk berjalan."></canvas>
+  <canvas id="hLabel" aria-hidden="true"></canvas>
+  <p class="hload" id="hLoad">Menumbuhkan hutan...</p>
+  <div id="hHud" hidden>
+    <div class="htop">
+      <button type="button" class="hchip hjam" id="hJam" data-f="siang" title="Ketuk untuk pratinjau pagi, siang, sore, malam"><i aria-hidden="true"></i><b>--:--</b></button>
+      <span class="hchip" id="hZona">Alun-alun Rumah Pohon</span>
+      <span class="hchip biji"><i aria-hidden="true"></i><b id="hBiji">0</b> Biji</span>
+    </div>
+    <div class="hbawah">
+      <button type="button" class="btn" id="hRumah">Pulang</button>
+      <button type="button" class="btn utama" id="hAct" hidden></button>
+    </div>
+    <p class="htoast" id="hToast" hidden></p>
+    <div class="hjoy" id="hJoy" aria-label="Joystick: geser untuk berjalan"><i id="hJoyK"></i></div>
+    <div class="hzoom" role="group" aria-label="Zoom peta">
+      <button type="button" id="hZin" aria-label="Perbesar">+</button>
+      <button type="button" id="hZout" aria-label="Perkecil">&minus;</button>
+      <button type="button" id="hMusik" class="hmusik" aria-pressed="true" aria-label="Matikan lagu"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 18V5l11-2v13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><circle cx="6" cy="18" r="3" fill="currentColor"/><circle cx="17" cy="16" r="3" fill="currentColor"/><path class="garis" d="M3 3l18 18" stroke="currentColor" stroke-width="2.6"/></svg></button>
+    </div>
+    <button type="button" class="hpeta" id="hPeta">Lihat seluruh hutan</button>
+  </div>
+  <div class="hdlg" id="hDlg" hidden><div class="hdlgin" id="hDlgIn" role="dialog" aria-modal="true"></div></div>
+</div>
+
+<script src="../data.js"></script>
+<script src="config.js"></script>
+<script src="hutan.js"></script>
+<script>
+(function () {
+  const R = window.RIMBA, M = R.members, S = R.species, ST = R.stats, D = R.districts;
+  const fmt = n => n.toLocaleString('id-ID');
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const imgs = {};
+  function loadImg(key) {
+    if (!key) return Promise.resolve(null);
+    if (!imgs[key]) imgs[key] = new Promise(res => { const i = new Image(); i.onload = () => res(i); i.onerror = () => res(null); i.src = '../img/' + key + '.webp'; });
+    return imgs[key];
+  }
+  const fontsReady = (document.fonts ? Promise.all([document.fonts.load('80px "Lilita One"'), document.fonts.load('700 40px "Fredoka"'), document.fonts.load('500 40px "Fredoka"'), document.fonts.load('700 40px "Caveat"'), document.fonts.load('700 30px "Space Mono"')]) : Promise.resolve()).catch(() => {});
+  const fontsOrTimeout = Promise.race([fontsReady, new Promise(r => setTimeout(r, 2500))]);
+
+  function rr(c, x, y, w, h, r) { c.beginPath(); c.moveTo(x + r, y); c.arcTo(x + w, y, x + w, y + h, r); c.arcTo(x + w, y + h, x, y + h, r); c.arcTo(x, y + h, x, y, r); c.arcTo(x, y, x + w, y, r); c.closePath(); }
+  function txt(c, s, x, y, font, fill, stroke, sw, align) {
+    c.font = font; c.textAlign = align || 'center'; c.textBaseline = 'middle'; c.lineJoin = 'round';
+    if (stroke) { c.lineWidth = sw; c.strokeStyle = stroke; c.strokeText(s, x, y); }
+    c.fillStyle = fill; c.fillText(s, x, y);
+  }
+  function fit(c, s, font, size, max) { let z = size; do { c.font = font.replace('$', z); z -= 2; } while (c.measureText(s).width > max && z > 20); return font.replace('$', z + 2); }
+
+  const ABIL = {
+    tiger: ['Auman Pertama', 'Berani duluan. Tidak takut siapa pun di rimba.'], lion: ['Raja Pendatang', 'Datang jauh dari Afrika, langsung incar pohon terbesar.'],
+    panther: ['Ninja Malam', 'Tak terlihat dalam gelap. Kecuali kalau senyum.'], leopard: ['Totol Kilat', 'Lari secepat kilat, totolnya tetap rapi.'],
+    dahan: ['Raja Dahan', 'Bisa turun pohon kepala duluan. Serius.'], kucing: ['Tidur 16 Jam', 'Paling jago rebahan se-Hutan Rimba.'],
+    owa: ['Nyanyian Pagi', 'Sepupu orangutan. Bangunin kanopi dengan lagu.'], gajah: ['Ingatan Super', 'Tidak pernah lupa siapa yang kasih pisang.'],
+    beruang: ['Pemburu Madu', 'Lidahnya panjang, hidungnya tajam.'], rusa: ['Mahkota Tanduk', 'Gagah di depan, kalem di dalam.'],
+    kancil: ['Si Paling Cerdik', 'Selalu punya akal buat kabur dari masalah.'], kelinci: ['Lompat Kilat', 'Sekali lompat, langsung ke barisan depan.'],
+    rubah: ['Licik tapi Lucu', 'Rencananya banyak, gemesnya lebih banyak.'], elang: ['Mata Elang', 'Bisa lihat komen kamu dari jauh.'],
+    rangkong: ['Penanam Hutan', 'Rangkong asli menyebar biji pohon. Petani rimba sejati.'], cendrawasih: ['Bulu Surga', 'Sekali menari, satu hutan menonton.'],
+    kakatua: ['Si Paling Cerewet', 'Semua gosip rimba lewat dia dulu.'], burung: ['Penyanyi Pagi', 'Alarm alami seluruh hutan.'],
+    bekantan: ['Hidung Juara', 'Asli Kalimantan. Hidungnya bikin iri.'], capybara: ['Santai Level Dewa', 'Tidak ada drama yang bisa bikin panik.'],
+    kudanil: ['Mangap Maksimal', 'Mulutnya muat satu semangka.'], hamster: ['Pipi Gudang', 'Bisa simpan stok makanan seminggu di pipi.'],
+    ikan: ['Penunggu Sungai', 'Masih di ember. Sabar, sungai menyusul.'], egg: ['???', 'Isinya rahasia. Menetas besok.'],
+    rakun: ['Cuci Dulu', 'Semua makanan dicuci sebelum dimakan.'], gorila: ['Otot Penjaga', 'Kuat, tapi hatinya lembut.'], kasuari: ['Lari Kencang', 'Burung tapi larinya ngebut.'],
+    kupukupu: ['Penyerbuk Bunga', 'Bikin hutan berbunga lagi.'], jerapah: ['Leher Pantau', 'Bisa lihat api dari jauh.'], cheetah: ['Tercepat di Rimba', 'Datang, menang, pergi.'],
+    marmut: ['Imut Maksimal', 'Senjatanya cuma satu: lucu.'], serigala: ['Lolongan Malam', 'Kalau dia melolong, semua pulang.'], anjing: ['Sahabat Setia', 'Selalu nunggu kamu pulang.'],
+    ular: ['Liuk Senyap', 'Datang tanpa suara, pergi tanpa jejak.'], kuda: ['Derap Gagah', 'Siap antar warga keliling hutan.'], garuda: ['Sayap Garuda', 'Mau pohon raksasa buat semua burung.'],
+    ayam: ['Alarm Pagi', 'Bangunin seisi hutan jam 5.'], sapi: ['Mooo Damai', 'Kalem, kenyang, bahagia.'], trenggiling: ['Bola Baja', 'Kalau takut, jadi bola.'],
+    buaya: ['Senyum Sungai', 'Diam di air, tapi senyumnya kelihatan.'], koala: ['Peluk Pohon', 'Tidur 20 jam, sisa waktunya peluk pohon.'], unta: ['Punuk Cadangan', 'Kuat jalan jauh tanpa minum.'],
+    trex: ['Raja Purba', 'Datang dari 66 juta tahun lalu, tangannya tetap pendek.'], jaguar: ['Gigitan Juara', 'Totolnya ada titik di tengah. Beda dari leopard.'],
+    kalkun: ['Kipas Ekor', 'Sekali buka ekor, semua minggir.'], monyet: ['Akrobat Dahan', 'Lompat dari pohon ke pohon tanpa jatuh.'], panda: ['Bambu Lover', 'Makan bambu 12 jam sehari. Konsisten.'],
+    badak: ['Cula Baja', 'Badak Jawa tinggal sedikit. Wajib dijaga.'], kambing: ['Pendaki Batu', 'Tebing curam? Santai.'], axolotl: ['Senyum Abadi', 'Bisa tumbuhkan lagi bagian tubuh yang hilang.'],
+    burunghantu: ['Jaga Malam', 'Kepalanya bisa muter hampir satu putaran.'], singaputih: ['Surai Salju', 'Langka, putih, dan tetap galak.'],
+    harimauputih: ['Belang Salju', 'Satu dari sepuluh ribu. Kamu salah satunya.'], serigalaputih: ['Lolongan Kutub', 'Tahan dingin, hangat ke kawanan.'], kelincipink: ['Lompat Manis', 'Kelinci paling pink se-rimba.'],
+    kanguru: ['Lompat Jauh', 'Bawa bayi di kantong ke mana-mana.'], tupai: ['Gudang Kacang', 'Lupa naruh kacang di mana, jadinya tumbuh pohon.'],
+    merak: ['Kipas Pelangi', 'Buka ekor sekali, satu sabana menoleh.'], hyena: ['Tawa Sabana', 'Ketawanya kedengaran sampai sungai.'],
+    platipus: ['Paruh Ajaib', 'Mamalia yang bertelur. Rimba pun bingung.'], angsa: ['Penjaga Danau', 'Jangan dekat-dekat telurnya.'],
+    pinguin: ['Salah Alamat', 'Nyasar dari kutub, tetap pakai jas ke mana-mana.'], badakjawa: ['Cula Pusaka', 'Tinggal segelintir di dunia. Wajib dijaga.'],
+    cicak: ['Cicak di Dinding', 'Diam-diam merayap, tahu semua gosip kampung.'], kerbau: ['Bajak Sawah', 'Kuat kerja, paling senang berendam lumpur.'],
+    landak: ['Duri Pelindung', 'Jangan dipeluk. Serius.'], anoa: ['Kerbau Mini', 'Asli Sulawesi. Kecil-kecil berani.'],
+    chinchilla: ['Bulu Awan', 'Bulunya paling lembut se-rimba.'], orca: ['Raja Laut', 'Nunggu sungai jadi laut. Sabar ya.'],
+    komodo: ['Naga Terakhir', 'Kadal terbesar di dunia. Asli Indonesia.'], sugarglider: ['Terjun Payung', 'Melayang dari pohon ke pohon.']
+  };
+  const BASE = { cheetah: [0, 30, 0], kelinci: [0, 20, 10], tiger: [25, 5, 0], lion: [25, 0, 5], gajah: [30, -10, 5], gorila: [30, 0, 0], hamster: [-15, 10, 25], marmut: [-15, 5, 25], kucing: [-5, 15, 20], kancil: [-10, 25, 10], capybara: [0, -15, 20], beruang: [20, 0, 10], elang: [5, 25, 0], egg: [0, 0, 0] };
+  const counts0 = {}; M.forEach(x => counts0[x.s] = (counts0[x.s] || 0) + 1);
+  function rarity(m) {
+    if (!m.n) return ['CALON WARGA', '#8a9a8a', '#c8d4c8'];
+    if (m.top) return ['MITOS', '#ff3d9a', '#ffd400'];
+    if (m.s === 'egg') return ['MISTERI', '#2fb5a8', '#9be7de'];
+    const c = counts0[m.s];
+    if (c === 1) return ['LEGENDARIS', '#ff9f00', '#ffe066'];
+    if (c === 2) return ['EPIK', '#8f4dff', '#d6b8ff'];
+    if (c <= 4) return ['SUPER LANGKA', '#2f8cff', '#a9d4ff'];
+    return ['LANGKA', '#3fae4a', '#b9ec9e'];
+  }
+  function hash(s) { let h = 2166136261; for (const ch of s) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+  function stats(m) {
+    const b = BASE[m.s] || [0, 0, 0]; let h = hash(m.u.toLowerCase());
+    return ['KEKUATAN', 'KELINCAHAN', 'KEIMUTAN'].map((k, i) => { h = Math.imul(h ^ (h >>> 13), 1274126177) >>> 0; let v = 45 + (h % 45) + b[i] + (m.top ? 12 : 0); return [k, Math.max(20, Math.min(99, v))]; });
+  }
+  function sparkle(c, x, y, s, col) { c.fillStyle = col; c.beginPath(); c.moveTo(x, y - s); c.quadraticCurveTo(x, y, x + s, y); c.quadraticCurveTo(x, y, x, y + s); c.quadraticCurveTo(x, y, x - s, y); c.quadraticCurveTo(x, y, x, y - s); c.fill(); }
+
+  // ---- KTP Rimba card (locked design: do not restyle) ----
+  async function draw(m) {
+    await fontsOrTimeout;
+    const sp = S[m.s], W = 1080, H = 1920, [rname, rc] = rarity(m), ab = ABIL[m.s] || ['Warga Rimba', 'Siap jaga hutan.'];
+    const dk = sp.d, dd = R.districts[dk] || { name: 'Hutan Rimba', color: '#1f7a4a' };
+    const cv = document.createElement('canvas'); cv.width = W; cv.height = H; const c = cv.getContext('2d');
+    const ACC = '#ffd23f', INK = '#1b2a22', MUTE = '#4b6656';
+    c.fillStyle = '#0f3322'; c.fillRect(0, 0, W, H);
+    c.fillStyle = '#174a30';
+    [[80, 260, 240, 88, -30], [1040, 1640, 280, 100, -35], [1000, 180, 180, 68, 25], [40, 1760, 220, 80, 30]].forEach(([x, y, rx, ry, a]) => { c.save(); c.translate(x, y); c.rotate(a * Math.PI / 180); c.beginPath(); c.ellipse(0, 0, rx, ry, 0, 0, Math.PI * 2); c.fill(); c.restore(); });
+    if ('letterSpacing' in c) c.letterSpacing = '8px';
+    txt(c, m.n ? 'RESMI TERDAFTAR' : 'CALON WARGA', W / 2, 150, '600 34px "Fredoka"', '#8fd6a0');
+    if ('letterSpacing' in c) c.letterSpacing = '0px';
+    txt(c, m.n ? 'Aku warga' : 'Aku mau jadi', W / 2, 250, '108px "Lilita One"', ACC);
+    txt(c, 'Hutan Rimba!', W / 2, 358, '108px "Lilita One"', ACC);
+    const CW = 1000, CH = 632, cx = W / 2, cy = 800;
+    c.save(); c.translate(cx, cy); c.rotate(-2.5 * Math.PI / 180); c.translate(-CW / 2, -CH / 2);
+    c.fillStyle = 'rgba(0,0,0,.28)'; rr(c, 0, 40, CW, CH, 40); c.fill();
+    c.save(); rr(c, 0, 0, CW, CH, 40); c.clip();
+    c.fillStyle = '#dff0ea'; c.fillRect(0, 0, CW, CH);
+    c.strokeStyle = '#c4e2d6'; c.lineWidth = 2.8;
+    for (let k = 0; k < 9; k++) { const y0 = 240 + k * 40; c.beginPath(); c.moveTo(0, y0); c.bezierCurveTo(160, y0 - 60, 320, y0 + 60, 500, y0); c.bezierCurveTo(680, y0 - 60, 840, y0 - 60, 1000, y0); c.stroke(); }
+    c.strokeStyle = '#b4d9ca'; c.lineWidth = 2.4; [60, 44, 28].forEach(r => { c.beginPath(); c.arc(600, 460, r, 0, Math.PI * 2); c.stroke(); });
+    c.fillStyle = '#1f7a4a'; c.fillRect(0, 0, CW, 124);
+    c.fillStyle = ACC; c.beginPath(); c.arc(70, 62, 32, 0, Math.PI * 2); c.fill();
+    c.strokeStyle = '#1f7a4a'; c.lineWidth = 5; c.lineCap = 'round'; c.lineJoin = 'round';
+    c.beginPath(); c.moveTo(70, 80); c.lineTo(70, 52); c.moveTo(70, 64); c.bezierCurveTo(60, 62, 56, 54, 56, 46); c.bezierCurveTo(64, 46, 70, 52, 70, 64); c.moveTo(70, 58); c.bezierCurveTo(80, 56, 84, 48, 84, 42); c.bezierCurveTo(76, 42, 70, 48, 70, 58); c.stroke();
+    txt(c, 'REPUBLIK HUTAN RIMBA', 124, 50, '40px "Lilita One"', '#ffffff', null, 0, 'left');
+    if ('letterSpacing' in c) c.letterSpacing = '4px';
+    txt(c, 'KARTU TANDA PENDUDUK RIMBA', 124, 92, '600 24px "Fredoka"', '#cdeed9', null, 0, 'left');
+    if ('letterSpacing' in c) c.letterSpacing = '0px';
+    const nik = 'NIK RIMBA ' + (m.n ? String(m.n).padStart(7, '0') : '-------');
+    txt(c, nik, 36, 170, '700 30px "Space Mono"', INK, null, 0, 'left');
+    const status = !m.n ? 'Calon Warga' : (m.n <= 100 ? 'Pendiri Hutan' : 'Warga Resmi');
+    const rows = [['Nama', '@' + m.u], ['Spesies', sp.name], ['Distrik', dd.name], ['Kelangkaan', rname], ['Kemampuan', ab[0]], ['Status', status], ['Berlaku', 'Seumur hidup']];
+    rows.forEach(([k, v], i) => {
+      const y = 222 + i * 40;
+      txt(c, k, 36, y, '500 26px "Fredoka"', MUTE, null, 0, 'left');
+      const vf = fit(c, ': ' + v, '700 $px "Fredoka"', 26, 470);
+      txt(c, ': ' + v, 200, y, vf, k === 'Kelangkaan' ? rc : INK, null, 0, 'left');
+    });
+    const px = 716, py = 148, pw = 236, ph = 292;
+    c.save(); rr(c, px, py, pw, ph, 20); c.clip();
+    c.fillStyle = dd.color; c.fillRect(px, py, pw, ph);
+    const dimg = await loadImg('d_' + dk);
+    if (dimg) { const hh = ph, ww = dimg.width * hh / dimg.height; c.globalAlpha = .85; c.drawImage(dimg, px + pw / 2 - ww / 2, py, ww, hh); c.globalAlpha = 1; }
+    const im = await loadImg(sp.img);
+    if (im) { let hh = 264, ww = im.width * hh / im.height; if (ww > pw - 10) { ww = pw - 10; hh = im.height * ww / im.width; } c.drawImage(im, px + pw / 2 - ww / 2, py + ph - hh + 6, ww, hh); }
+    else if (sp.emoji) { c.font = '150px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText(sp.emoji, px + pw / 2, py + ph / 2 + 30); }
+    c.restore(); c.lineWidth = 6; c.strokeStyle = '#ffffff'; rr(c, px, py, pw, ph, 20); c.stroke();
+    txt(c, 'Hutan Rimba, ' + (m.n && m.n <= 143 ? '06-11-2026' : '07-11-2026'), px + pw / 2, py + ph + 22, '500 20px "Fredoka"', MUTE);
+    txt(c, 'Orangutan', px + pw / 2, py + ph + 62, '700 46px "Caveat"', '#1f4f9e');
+    c.fillStyle = '#e2b84a'; rr(c, 36, CH - 100, 92, 72, 14); c.fill(); c.strokeStyle = '#b38a2a'; c.lineWidth = 2; c.stroke();
+    c.fillStyle = '#d3a63a'; for (let i = 0; i < 6; i++) { rr(c, 44 + (i % 3) * 26, CH - 92 + Math.floor(i / 3) * 28, 22, 24, 4); c.fill(); }
+    const dt = 'DISTRIK ' + dd.name.toUpperCase(); c.font = '700 24px "Fredoka"'; const dw = c.measureText(dt).width + 48;
+    c.fillStyle = dd.color; rr(c, 152, CH - 92, dw, 56, 28); c.fill(); txt(c, dt, 152 + dw / 2, CH - 63, '700 24px "Fredoka"', '#ffffff');
+    c.save(); c.translate(CW - 264 - 70, CH - 20 - 78); c.rotate(-14 * Math.PI / 180); c.globalAlpha = .75;
+    c.strokeStyle = rc; c.lineWidth = 6; c.beginPath(); c.arc(0, 0, 74, 0, Math.PI * 2); c.stroke(); c.beginPath(); c.arc(0, 0, 62, 0, Math.PI * 2); c.lineWidth = 2; c.stroke();
+    const st = m.top ? ['TOP', 'KOMEN', 'HARI 1'] : (rname.indexOf(' ') > 0 ? rname.split(' ') : [rname]);
+    st.forEach((t, i) => txt(c, t, 0, (i - (st.length - 1) / 2) * 26, '700 22px "Fredoka"', rc));
+    c.restore();
+    c.restore(); c.lineWidth = 0; c.restore();
+    const p1 = m.n ? 'Warga #' + m.n + ' dari ' + M.length : 'Belum resmi', p2 = fmt(ST.trees) + ' pohon tertanam';
+    c.font = '600 32px "Fredoka"'; const w1 = c.measureText(p1).width + 64, w2 = c.measureText(p2).width + 64, gx = W / 2 - (w1 + w2 + 20) / 2;
+    c.fillStyle = '#174a30'; rr(c, gx, 1300, w1, 76, 28); c.fill(); rr(c, gx + w1 + 20, 1300, w2, 76, 28); c.fill();
+    txt(c, p1, gx + w1 / 2, 1338, '600 32px "Fredoka"', '#fdf6e7'); txt(c, p2, gx + w1 + 20 + w2 / 2, 1338, '600 32px "Fredoka"', '#fdf6e7');
+    txt(c, ab[1], W / 2, 1450, fit(c, ab[1], '500 $px "Fredoka"', 34, 900), '#9fd8a8');
+    const nd = M.filter(x => (S[x.s] || {}).d === dk).length;
+    const lt = nd + ' tetangga di Distrik ' + dd.name; c.font = '700 36px "Fredoka"'; const lw = c.measureText(lt).width + 72;
+    c.fillStyle = dd.color; rr(c, W / 2 - lw / 2, 1530, lw, 84, 42); c.fill(); txt(c, lt, W / 2, 1573, '700 36px "Fredoka"', '#ffffff');
+    txt(c, 'KTP-mu apa? Cek link di bio', W / 2, 1730, '600 40px "Fredoka"', '#cfe9d5');
+    txt(c, '@hutanrimbanet', W / 2, 1818, '84px "Lilita One"', ACC);
+    return cv;
+  }
+
+  // ---------- census numbers ----------
+  const spCount = {}; M.forEach(m => spCount[m.s] = (spCount[m.s] || 0) + 1);
+  const dCount = {}; M.forEach(m => { const k = S[m.s].d; dCount[k] = (dCount[k] || 0) + 1; });
+  const order = ['kanopi', 'lantai', 'sabana', 'sungai', 'kampung', 'telur'];
+  const busiest = order.filter(k => k !== 'telur').sort((a, b) => (dCount[b] || 0) - (dCount[a] || 0))[0];
+  const nSpecies = Object.keys(S).filter(k => k !== 'egg').length + 1; // + orangutan
+
+  // ---------- hero ----------
+  const pct = ST.trees / ST.goal * 100;
+  $('pfill').style.width = Math.max(.6, pct) + '%';
+  $('pbar').setAttribute('aria-label', fmt(ST.trees) + ' dari ' + fmt(ST.goal) + ' pohon');
+  $('ptext').textContent = 'Target negara: ' + fmt(ST.goal) + ' pohon. Sudah ' + pct.toLocaleString('id-ID', { maximumFractionDigits: 3 }) + '%. Jalan masih panjang, ajak temanmu.';
+  $('hSp').textContent = nSpecies;
+  function countUp(el, to) {
+    if (reduce) { el.textContent = fmt(to); return; }
+    const t0 = performance.now(), dur = 1100;
+    (function f(t) { const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 3); el.textContent = fmt(Math.round(to * e)); if (p < 1) requestAnimationFrame(f); })(t0);
+  }
+  countUp($('hPend'), M.length); countUp($('hPohon'), ST.trees);
+  $('pengText').textContent = 'Distrik ' + D[busiest].name + ' paling padat: ' + dCount[busiest] + ' warga berdesakan. Kepala Rimba sedang mencari jalan keluarnya.';
+
+
+  // ---------- Peta ----------
+  const PINS = [
+    ['kanopi', 'Kanopi', 50, 30], ['lantai', 'Lantai Hutan', 42, 56], ['rumah', 'Rumah Pohon', 50, 70],
+    ['sabana', 'Sabana', 82, 66], ['kampung', 'Kampung', 15, 67], ['sungai', 'Tepi Sungai', 62, 91]
+  ];
+  $('petaBox').insertAdjacentHTML('beforeend', PINS.map(([k, n, x, y]) => '<button type="button" class="pin" data-k="' + k + '" style="left:' + x + '%;top:' + y + '%" aria-pressed="false"><b>' + n + '</b><i></i></button>').join(''));
+  function pinInfo(k) {
+    $('petaBox').querySelectorAll('.pin').forEach(p => p.setAttribute('aria-pressed', String(p.dataset.k === k)));
+    if (k === 'rumah') {
+      $('pinfo').innerHTML = '<div style="--dc:#c2312a"><h3>Rumah Pohon</h3><p>Kantor sekaligus rumah Kepala Rimba, satu-satunya orangutan. Semua dekret ditulis di sini.</p><div class="wajah"><img src="../img/orangutan.webp" alt="Orangutan"></div></div>';
+      return;
+    }
+    const d = D[k], list = M.filter(m => S[m.s].d === k), sps = [...new Set(list.map(m => m.s))];
+    $('pinfo').innerHTML = '<div style="--dc:' + d.color + '"><h3>Distrik ' + esc(d.name) + '</h3><p>' + esc(d.desc) + '. Dihuni <b>' + list.length + ' warga</b> dari ' + sps.length + ' spesies.</p>' +
+      '<div class="wajah">' + sps.slice(0, 12).map(s => '<img src="../img/' + S[s].img + '.webp" alt="' + esc(S[s].name) + '" title="' + esc(S[s].name) + '">').join('') + (sps.length > 12 ? '<span>+' + (sps.length - 12) + ' lagi</span>' : '') + '</div></div>';
+  }
+  $('petaBox').addEventListener('click', e => { const p = e.target.closest('.pin'); if (p) pinInfo(p.dataset.k); });
+  pinInfo('rumah');
+
+  // ---------- KTP (locked card design) ----------
+  let current = null, blob = null, booted = false, mine = false;
+  async function show(m) {
+    current = m; $('dl').disabled = true;
+    const cv = await draw(m);
+    const im = $('cardimg');
+    im.classList.remove('in'); void im.offsetWidth;
+    im.src = cv.toDataURL('image/png'); im.alt = 'KTP Rimba untuk @' + m.u;
+    if (booted) im.classList.add('in');
+    blob = await new Promise(r => cv.toBlob(r, 'image/png'));
+    $('dl').disabled = false;
+  }
+  function member(u) {
+    const m = M.find(x => x.u.toLowerCase() === u.toLowerCase()); if (!m) return null;
+    return Object.assign({}, m, { top: m.u === R.top });
+  }
+  function foundMsg(m) {
+    const sp = S[m.s], d = D[sp.d];
+    return 'Ketemu! Kamu warga <b>#' + m.n + '</b>, jadi <b>' + esc(sp.name) + '</b> di <b>' + esc(d.name) + '</b>. Kelangkaan: <b>' + rarity(m)[0].toLowerCase() + '</b>.';
+  }
+  function openKTP(u) {
+    const m = member(u); if (!m) return;
+    $('q').value = m.u; $('make').classList.remove('show'); $('msg').innerHTML = foundMsg(m);
+    show(m); $('ktp').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }
+  const pick = $('pick');
+  Object.entries(S).filter(([k]) => k !== 'egg').sort((a, b) => a[1].name.localeCompare(b[1].name)).forEach(([k, v]) => {
+    const o = document.createElement('option'); o.value = k; o.textContent = v.name; pick.appendChild(o);
+  });
+  $('f').addEventListener('submit', e => {
+    e.preventDefault();
+    const u = $('q').value.trim().replace(/^@/, '');
+    if (!u) { $('msg').textContent = 'Tulis username IG-mu dulu.'; $('q').focus(); return; }
+    const m = member(u);
+    if (m) { mine = true; $('make').classList.remove('show'); $('msg').innerHTML = foundMsg(m); show(m); }
+    else {
+      $('msg').innerHTML = '<b>@' + esc(u) + '</b> belum terdaftar. Pilih hewanmu buat kartu calon warga. Biar resmi, komen hewanmu di Reels terbaru.';
+      $('make').classList.add('show');
+    }
+  });
+  $('mk').addEventListener('click', () => {
+    const u = $('q').value.trim().replace(/^@/, '') || 'kamu';
+    show({ u, s: pick.value, n: 0, top: false });
+  });
+  $('cp').addEventListener('click', async () => {
+    const m = current; if (!m) return;
+    const t = 'KTP Rimba-ku ' + rarity(m)[0] + '! Aku ' + S[m.s].name + (m.n ? ' warga #' + m.n : '') + ' di Distrik ' + D[S[m.s].d].name + '. KTP-mu apa? Cek @hutanrimbanet';
+    const lab = $('cp').querySelector('span');
+    try { await navigator.clipboard.writeText(t); lab.textContent = 'Tersalin'; } catch (e) { $('msg').textContent = t; lab.textContent = 'Salin manual'; }
+    setTimeout(() => { lab.textContent = 'Caption'; }, 2200);
+  });
+  const fname = () => 'ktp-rimba-' + (current ? current.u.replace(/[^a-z0-9_.]/gi, '') : 'warga') + '.png';
+  let dlcap = null;
+  (async () => { try { dlcap = window.claude && await window.claude.use('downloads'); } catch (e) {} })();
+  $('dl').addEventListener('click', async () => {
+    if (!blob || !current) return;
+    if (dlcap) { try { await dlcap.save({ filename: fname(), data: blob }); return; } catch (e) { if (e && e.code === 'declined') return; } }
+    try { const url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = fname(); document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 4000); }
+    catch (e) { $('msg').textContent = 'Tidak bisa menyimpan di sini. Tekan lama gambar KTP, atau screenshot.'; }
+  });
+  try {
+    if (navigator.canShare && navigator.canShare({ files: [new File([new Blob(['x'])], 'x.png', { type: 'image/png' })] })) {
+      $('sh').hidden = false;
+      $('sh').addEventListener('click', async () => { if (!blob || !current) return; try { await navigator.share({ files: [new File([blob], fname(), { type: 'image/png' })], text: 'KTP-mu apa? Cek @hutanrimbanet' }); } catch (e) {} });
+    }
+  } catch (e) {}
+
+  // ---------- Warta Rimba ----------
+  const lantai = dCount.lantai || 0;
+  const EDISI = [
+    { ed: 'Edisi 1', judul: 'Orangutan terakhir pindah ke tanah gundul', isi: [
+      'Kebakaran hutan menyisakan satu orangutan. Pagi ini ia pindah ke tanah kosong tanpa satu pun tetangga, membawa kayu sisa yang masih bisa dipakai.',
+      'Dari kayu itu ia mulai membangun rumah pohon. Aturannya sederhana: setiap follower menjadi warga, dan setiap warga baru menumbuhkan satu pohon.',
+      'Kepala Rimba berpesan, komen teratas di Reels akan langsung dikerjakan. Hutan ini milik netizen.'],
+      foto: ['aerial', 'Hari pertama: tanah gundul dan satu rumah pohon.'], teka: ['Aku asli Kalimantan. Hidungku panjang dan bikin iri. Siapa aku?', 'Bekantan'] },
+    { ed: 'Edisi 2', judul: '53 pohon tumbuh, Singa dan Macan rebutan pohon besar', isi: [
+      'Tanah yang kemarin gundul kini ditumbuhi 53 pohon. Warga berdatangan dari segala penjuru, dari kancil sampai jerapah.',
+      'Keributan pecah di bawah pohon paling besar. Kubu Singa dan kubu Macan sama-sama mengklaim tempat itu sebagai rumah.',
+      'Kepala Rimba menyerahkan keputusan kepada warga. Suara dihitung lewat kolom komentar Reels.'],
+      foto: ['d_sabana', 'Kubu Singa bersiap di pinggir sabana.'], teka: ['Aku bisa turun dari pohon dengan kepala duluan. Siapa aku?', 'Macan Dahan'] },
+    { ed: 'Edisi 3', judul: 'Hewan pindah ke distrik, Lantai Hutan kepadatan', isi: [
+      'Republik resmi dibagi menjadi distrik sesuai habitat asli: Kanopi, Lantai Hutan, Sabana, Tepi Sungai, dan Kampung. Rumah pohon Kepala Rimba juga sudah berdiri.',
+      'Masalah baru muncul. Distrik Lantai Hutan kini dihuni ' + lantai + ' warga, terbanyak di Republik. Macan, gajah, dan beruang madu berdesakan di bawah naungan yang sama.',
+      'Kantor Catatan Sipil membuka layanan KTP Rimba. Semua warga bisa mengambil kartunya di situs ini.'],
+      foto: ['d_lantai', 'Suasana padat di Distrik Lantai Hutan.'], teka: ['Kalau takut, aku menggulung jadi bola bersisik. Siapa aku?', 'Trenggiling'] }
+  ];
+  window.RHR.warta = { EDISI };
+  let ed = EDISI.length - 1;
+  function seeded(i) { return M[(hash('edisi' + i) % M.length)]; }
+  function renderWarta() {
+    const e = EDISI[ed];
+    $('wEd').textContent = e.ed + (ed === EDISI.length - 1 ? ' (terbaru)' : '');
+    $('wJudul').textContent = e.judul;
+    $('wFoto').src = '../img/' + e.foto[0] + '.webp'; $('wFoto').alt = e.foto[1]; $('wCap').textContent = 'Foto: ' + e.foto[1];
+    $('wIsi').innerHTML = e.isi.map(p => '<p>' + esc(p) + '</p>').join('');
+    const w = seeded(ed), sp = S[w.s];
+    $('wWarga').innerHTML = '<img src="../img/' + sp.img + '.webp" alt=""><span><b>@' + esc(w.u) + '</b><br>' + esc(sp.name) + ', warga #' + w.n + '<br><small>' + esc((ABIL[w.s] || ['', ''])[1]) + '</small></span>';
+    $('wWarga').dataset.u = w.u;
+    $('wTeka').textContent = e.teka[0]; $('wJwb').textContent = e.teka[1]; $('wJwb').hidden = true; $('wBuka').hidden = false;
+    $('wPrev').disabled = ed === 0; $('wNext').disabled = ed === EDISI.length - 1;
+  }
+  $('wPrev').onclick = () => { if (ed > 0) { ed--; renderWarta(); } };
+  $('wNext').onclick = () => { if (ed < EDISI.length - 1) { ed++; renderWarta(); } };
+  $('wBuka').onclick = () => { $('wJwb').hidden = false; $('wBuka').hidden = true; };
+  $('wWarga').onclick = () => openKTP($('wWarga').dataset.u);
+  renderWarta();
+
+  // ---------- Dekret ----------
+  const SK = [
+    ['001', 'Setiap follower adalah warga', 'Begitu follow @hutanrimbanet, kamu resmi jadi hewan di Republik. Satu warga baru, satu pohon ditanam.'],
+    ['002', 'Komen teratas langsung dikerjakan', 'Usulan dengan like terbanyak di Reels menjadi perintah resmi untuk episode berikutnya.'],
+    ['003', 'Gelar Pendiri Hutan', '100 warga pertama mendapat status Pendiri Hutan di KTP Rimba, berlaku seumur hidup.'],
+    ['004', 'Orangutan hanya satu', 'Jabatan orangutan sudah diisi Kepala Rimba. Warga yang memilih orangutan dijadikan Owa Kalimantan, sepupu terdekatnya.'],
+    ['005', 'Distrik sesuai habitat asli', 'Setiap hewan tinggal di distrik yang cocok dengan habitat aslinya, walau ada distrik yang jadi sangat ramai.']
+  ];
+  $('skList').innerHTML = SK.map(([n, h, p]) => '<article class="sk"><small>Surat Keputusan No. ' + n + '/RHR/2026</small><h3>' + h + '</h3><p>' + p + '</p><span class="stamp">BERLAKU</span></article>').join('');
+
+  // ---------- Warga baru ----------
+  const newest = M.slice().sort((a, b) => b.n - a.n);
+  let shown = 0;
+  function pasHTML(m) {
+    const sp = S[m.s], d = D[sp.d] || {};
+    return '<button type="button" data-u="' + esc(m.u) + '" style="--dc:' + (d.color || '#7a5a2a') + '33"><span class="ft"><img loading="lazy" decoding="async" src="../img/' + sp.img + '.webp" alt=""></span><b>@' + esc(m.u) + '</b><small>' + esc(sp.name) + ' #' + m.n + '</small></button>';
+  }
+  function more() { const next = newest.slice(shown, shown + 18); $('pasGrid').insertAdjacentHTML('beforeend', next.map(pasHTML).join('')); shown += next.length; $('pasMore').hidden = shown >= newest.length; }
+  $('pasMore').onclick = more; more();
+  $('pasGrid').addEventListener('click', e => { const b = e.target.closest('button'); if (b) openKTP(b.dataset.u); });
+
+  // ---------- Sensus ----------
+  const maxD = Math.max(...order.map(k => dCount[k] || 0));
+  $('dList').innerHTML = order.filter(k => D[k]).map(k => {
+    const d = D[k], n = dCount[k] || 0;
+    return '<div class="drow" style="--dc:' + d.color + '">' + (d.img ? '<img loading="lazy" src="../img/' + d.img + '.webp" alt="">' : '<span class="ph"></span>') +
+      '<div><h3>' + esc(d.name) + '</h3><p>' + esc(d.desc) + '</p><div class="bar"><i style="width:' + (n / maxD * 100) + '%"></i></div><span>' + n + ' warga</span></div></div>';
+  }).join('');
+  $('klub').innerHTML = Object.entries(spCount).filter(([k]) => k !== 'egg').sort((a, b) => b[1] - a[1] || S[a[0]].name.localeCompare(S[b[0]].name))
+    .map(([k, n]) => '<li><span>' + esc(S[k].name) + '</span><i></i><b>' + n + '</b></li>').join('');
+
+  // ---------- Katalog ----------
+  $('katList').innerHTML = order.filter(k => k !== 'telur').map(k => {
+    const list = Object.entries(S).filter(([sk, v]) => v.d === k).sort((a, b) => a[1].name.localeCompare(b[1].name));
+    let cells = list.map(([sk, v]) => '<div><img loading="lazy" src="../img/' + v.img + '.webp" alt=""><b>' + esc(v.name) + '</b><small>' + (spCount[sk] || 0) + ' warga</small></div>');
+    if (k === 'kanopi') cells.unshift('<div class="kepala"><img loading="lazy" src="../img/orangutan.webp" alt=""><b>Orangutan</b><small>Kepala Rimba</small></div>');
+    return '<div style="--dc:' + D[k].color + '"><h3>' + esc(D[k].name) + '</h3><div class="kat">' + cells.join('') + '</div></div>';
+  }).join('') + '<div style="--dc:' + D.telur.color + '"><h3>Belum menetas</h3><div class="kat"><div><img loading="lazy" src="../img/egg.webp" alt=""><b>Telur Misteri</b><small>' + (spCount.egg || 0) + ' telur</small></div></div></div>';
+
+  // ---------- Radio ----------
+  // lagu ceria: tangga nada mayor, progresi akor riang, bas memantul, tepuk tangan
+  const SONGS = [
+    { t: 'Pagi Cerah di Kanopi', bpm: 118, root: 0, seed: 3, prog: [0, 4, 5, 3], drums: 2, lead: .2 },
+    { t: 'Joget Sabana', bpm: 134, root: 2, seed: 11, prog: [0, 3, 4, 3], drums: 2, lead: .2 },
+    { t: 'Piknik Tepi Sungai', bpm: 112, root: 5, seed: 7, prog: [0, 5, 3, 4], drums: 2, lead: .2 },
+    { t: 'Pesta Panen Kampung', bpm: 126, root: -3, seed: 23, prog: [3, 4, 0, 0], drums: 2, lead: .2 }
+  ];
+  // lagu latar di peta, satu per fase hari
+  const BGM = {
+    pagi: { t: 'Pagi', bpm: 108, root: 2, seed: 31, prog: [0, 3, 4, 0], drums: 1, lead: .15 },
+    siang: { t: 'Siang', bpm: 122, root: 0, seed: 41, prog: [0, 4, 5, 3], drums: 2, lead: .15 },
+    sore: { t: 'Sore', bpm: 96, root: 5, seed: 53, prog: [0, 5, 3, 4], drums: 1, lead: .13 },
+    malam: { t: 'Malam', bpm: 74, root: -3, seed: 67, prog: [0, 5, 3, 4], drums: 0, lead: .12 }
+  };
+  let cur = null, bgmOn = false, bgmPhase = 'siang', bgmMuted = false, engine = false;
+  try { bgmMuted = localStorage.getItem('rimba-bgm-mute') === '1'; } catch (e) {}
+  let song = 0, ac = null, master = null, timer = null, playing = false, step = 0, nextT = 0, pattern = null;
+  $('rList').innerHTML = SONGS.map((s, i) => '<li><button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '"><span>' + s.t + '</span><span>' + s.bpm + ' bpm</span></button></li>').join('');
+  const MAJ = [0, 2, 4, 5, 7, 9, 11];
+  function rng(seed) { let s = seed * 9301 + 49297; return () => (s = (s * 9301 + 49297) % 233280) / 233280; }
+  const PENTA = d => [0, 1, 2, 4, 5].includes(((d % 7) + 7) % 7);
+  function makePattern(s) {
+    const r = rng(s.seed), mel = [];
+    let deg = 4;
+    // dua birama melodi, diulang, lalu ditutup di nada dasar
+    for (let i = 0; i < 16; i++) {
+      const ch = s.prog[Math.floor(i / 8) % 4], strong = i % 2 === 0;
+      if (r() < (strong ? .9 : .45)) {
+        const tones = strong ? [ch, ch + 2, ch + 4, ch + 7].filter(x => x >= 0 && x <= 11) : [deg - 1, deg + 1, deg + 2].filter(x => x >= 0 && x <= 11 && PENTA(x));
+        if (!tones.length) { mel.push(-1); continue; }
+        tones.sort((a, b) => Math.abs(a - deg) - Math.abs(b - deg)); deg = tones[Math.min(tones.length - 1, Math.floor(r() * 2))]; mel.push(deg);
+      } else mel.push(-1);
+    }
+    const full = mel.concat(mel.slice(0, 12), [-1, 7, -1, -1]).concat(mel.map((m, i) => i % 4 === 3 ? -1 : m)).concat(mel.slice(0, 10), [4, -1, 2, -1, 0, -1]);
+    return { mel: full };
+  }
+  function freq(deg, s, oct) { const o = Math.floor(deg / 7), d = ((deg % 7) + 7) % 7; return 261.63 * Math.pow(2, (s.root + MAJ[d]) / 12 + o + (oct || 0)); }
+  function pluck(t, f, v, len) {
+    const o = ac.createOscillator(), o2 = ac.createOscillator(), g = ac.createGain(), lp = ac.createBiquadFilter();
+    o.type = 'triangle'; o2.type = 'square'; o.frequency.value = f; o2.frequency.value = f * 1.004;
+    const g2 = ac.createGain(); g2.gain.value = .12; lp.type = 'lowpass'; lp.frequency.setValueAtTime(f * 6, t); lp.frequency.exponentialRampToValueAtTime(f * 1.5, t + .25);
+    o.connect(g); o2.connect(g2).connect(g); g.connect(lp).connect(master);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + .005); g.gain.exponentialRampToValueAtTime(.0008, t + (len || .35));
+    o.start(t); o2.start(t); o.stop(t + (len || .35) + .05); o2.stop(t + (len || .35) + .05);
+  }
+  function bass(t, f) {
+    const o = ac.createOscillator(), g = ac.createGain(), lp = ac.createBiquadFilter();
+    o.type = 'sawtooth'; o.frequency.value = f; lp.type = 'lowpass'; lp.frequency.value = 420;
+    o.connect(lp).connect(g).connect(master); g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.26, t + .01); g.gain.exponentialRampToValueAtTime(.001, t + .22);
+    o.start(t); o.stop(t + .25);
+  }
+  let noiseBuf = null;
+  function noise(t, type, fq, q, v, dur) {
+    if (!noiseBuf) { noiseBuf = ac.createBuffer(1, ac.sampleRate * .3, ac.sampleRate); const d = noiseBuf.getChannelData(0); for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1; }
+    const src = ac.createBufferSource(), f = ac.createBiquadFilter(), g = ac.createGain();
+    src.buffer = noiseBuf; f.type = type; f.frequency.value = fq; f.Q.value = q;
+    src.connect(f).connect(g).connect(master); g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.001, t + dur); src.start(t); src.stop(t + dur + .02);
+  }
+  function kick(t) { const o = ac.createOscillator(), g = ac.createGain(); o.frequency.setValueAtTime(150, t); o.frequency.exponentialRampToValueAtTime(48, t + .12); g.gain.setValueAtTime(.6, t); g.gain.exponentialRampToValueAtTime(.001, t + .18); o.connect(g).connect(master); o.start(t); o.stop(t + .2); }
+  function clap(t) { [0, .012, .024].forEach(d => noise(t + d, 'bandpass', 1500, 1.4, .3, .09)); }
+  function tick() {
+    const s = cur, dt = 60 / s.bpm / 2;
+    while (nextT < ac.currentTime + .15) {
+      const i = step % 64, bar = Math.floor(i / 8) % 4, j = i % 8, ch = s.prog[bar], m = pattern.mel[i];
+      if (m >= 0) pluck(nextT, freq(m, s, 1), s.lead, s.drums ? .32 : .6);
+      // bas: dasar-dasar-kelima, memantul
+      if (s.drums ? (j === 0 || j === 3 || j === 4 || j === 6) : j === 0) bass(nextT, freq(j === 6 ? ch + 4 : ch, s, -2));
+      // genjrengan akor di ketukan lemah (rasa ukulele)
+      if (s.drums) { if (j === 2 || j === 6 || j === 7) [ch, ch + 2, ch + 4].forEach((d, k) => pluck(nextT + k * .012, freq(d, s, 0), .07, .16)); }
+      else if (j === 0 || j === 4) [ch, ch + 2, ch + 4, ch + 7].forEach((d, k) => pluck(nextT + k * .09, freq(d, s, 0), .06, .9));
+      if (s.drums && (j === 0 || j === 4)) kick(nextT);
+      if (s.drums > 1 && (j === 2 || j === 6)) clap(nextT);
+      if (s.drums) noise(nextT, 'highpass', 7000, .7, j % 2 ? .09 : .05, .04);
+      nextT += dt; step++;
+    }
+  }
+  const NASKAH = () => {
+    const baru = newest.slice(0, 5).map(m => '@' + m.u + ' (' + S[m.s].name + ')').join(', ');
+    return ['Salam rimba! Kak Kakatua di sini, mengudara langsung dari Rumah Pohon.',
+      'Selamat datang buat warga paling baru: ' + baru + '. Jangan lupa ambil KTP kalian!',
+      'Laporan sensus: Distrik ' + D[busiest].name + ' paling ramai dengan ' + dCount[busiest] + ' warga. Yang di sana, tolong jangan injak ekor tetangga.',
+      'Pohon tertanam hari ini: ' + fmt(ST.trees) + '. Target kita satu juta. Ajak temanmu follow, satu teman satu pohon.',
+      'Lagu berikutnya biar semua warga ikut joget. Kak Kakatua pamit dulu, cuit cuit!'];
+  };
+  let nTimer = null;
+  function typeNaskah() {
+    clearTimeout(nTimer); const lines = NASKAH(); let li = 0, ci = 0; const el = $('rNaskah'); el.textContent = '';
+    (function go() {
+      if (!playing) return;
+      const line = lines[li];
+      if (ci <= line.length) { el.textContent = line.slice(0, ci); ci++; nTimer = setTimeout(go, reduce ? 0 : 32); }
+      else { li = (li + 1) % lines.length; ci = 0; nTimer = setTimeout(go, 2600); }
+    })();
+  }
+  $('rNaskah').textContent = 'Tekan "Putar musik" buat dengar siaran.';
+  function setSong(i) {
+    song = i; $('rNow').textContent = SONGS[i].t; if (playing || !bgmOn) use(SONGS[i]);
+    $('rList').querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.i === i)));
+  }
+  function use(s) { if (cur === s) return; cur = s; pattern = makePattern(s); step = 0; }
+  function vol() { if (master) master.gain.value = $('rVol').value / 100 * .8 * (playing ? 1 : .6); }
+  async function ensureAudio() {
+    if (!ac) { ac = new (window.AudioContext || window.webkitAudioContext)(); master = ac.createGain(); vol(); master.connect(ac.destination); }
+    if (ac.state === 'suspended') await ac.resume();
+  }
+  function engineOn() { if (engine) return; engine = true; nextT = ac.currentTime + .05; timer = setInterval(tick, 40); }
+  function engineOff() { engine = false; clearInterval(timer); }
+  // setelah radio berhenti: kembali ke lagu latar kalau aktif
+  function afterRadio() { if (bgmOn && !bgmMuted) { use(BGM[bgmPhase]); vol(); engineOn(); } else engineOff(); }
+  setSong(0);
+  $('rList').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; setSong(+b.dataset.i); if (!playing) $('rPlay').click(); });
+  $('rPlay').addEventListener('click', async () => {
+    try { await ensureAudio(); } catch (e) { $('rStat').textContent = 'Audio tidak tersedia di sini'; return; }
+    playing = !playing;
+    if (playing) { use(SONGS[song]); vol(); engineOn(); $('rPlay').textContent = 'Hentikan'; $('rStat').textContent = 'Sedang mengudara'; $('radioBox').classList.add('on'); typeNaskah(); }
+    else { vol(); afterRadio(); $('rPlay').textContent = 'Putar musik'; $('rStat').textContent = 'Siaran dijeda'; $('radioBox').classList.remove('on'); clearTimeout(nTimer); }
+  });
+  window.RHR.radio = {
+    state: () => ({ playing, song }),
+    toggle: () => $('rPlay').click(),
+    play: i => { setSong(i); if (!playing) $('rPlay').click(); },
+    songs: () => SONGS.map(s => s.t),
+    line: () => { const L = NASKAH(); return L[Math.floor(Math.random() * L.length)]; }
+  };
+  $('rVol').addEventListener('input', vol);
+  window.RHR.bgm = {
+    // dipanggil dari ketukan pertama (tombol masuk), jadi browser mengizinkan suara
+    start: async phase => { if (phase) bgmPhase = phase; bgmOn = true; if (bgmMuted || playing) return; try { await ensureAudio(); } catch (e) { return; } use(BGM[bgmPhase]); vol(); engineOn(); },
+    setPhase: phase => { if (!BGM[phase]) return; bgmPhase = phase; if (bgmOn && !bgmMuted && !playing && engine) use(BGM[phase]); },
+    mute: m => { bgmMuted = !!m; try { localStorage.setItem('rimba-bgm-mute', m ? '1' : '0'); } catch (e) {} if (playing) return; if (m) engineOff(); else if (bgmOn && ac) { use(BGM[bgmPhase]); vol(); engineOn(); } },
+    muted: () => bgmMuted,
+    state: () => ({ on: bgmOn && !bgmMuted && engine && !playing, phase: bgmPhase })
+  };
+
+  // ---------- Patroli Api (portal) ----------
+  let best = 0; try { best = +localStorage.getItem('rimba-patroli') || 0; } catch (e) {}
+  $('gRekor').textContent = best;
+  const pat = window.RHR.createPatroli($('cv'), {
+    onScore: s => { $('gSkor').textContent = s; }, onLives: l => { $('gNyawa').textContent = l; },
+    onEnd: score => {
+      const rek = score > best; if (rek) { best = score; try { localStorage.setItem('rimba-patroli', best); } catch (e) {} $('gRekor').textContent = best; }
+      $('lJudul').textContent = rek ? 'Rekor baru!' : 'Patroli selesai';
+      $('lTeks').textContent = score + ' bara padam. Mau dapat Biji beneran? Kerja di Pos Pemadam di dalam hutan.' + (mine && current && current.n ? ' Kerja bagus, @' + current.u + '.' : '');
+      $('gMulai').textContent = 'Patroli lagi'; $('layar').hidden = false;
+    }
+  });
+  $('gMulai').onclick = () => { $('layar').hidden = true; pat.start(); };
+  window.RHR.drawKTP = async (u, s) => {
+    const m = member(u) || { u, s, n: 0, top: false };
+    const cv = await draw(m), url = cv.toDataURL('image/png'), blob2 = await new Promise(r => cv.toBlob(r, 'image/png'));
+    const sp = S[m.s] || {};
+    return { member: !!m.n, url, blob: blob2, name: 'ktp-rimba-' + String(m.u).replace(/[^a-z0-9_.]/gi, '') + '.png', caption: 'KTP Rimba-ku ' + rarity(m)[0] + '! Aku ' + (sp.name || '') + (m.n ? ' warga #' + m.n : '') + ' di Distrik ' + ((D[sp.d] || {}).name || '') + '. KTP-mu apa? Cek @hutanrimbanet' };
+  };
+  window.RHR.saveKTP = async r => {
+    if (dlcap) { try { await dlcap.save({ filename: r.name, data: r.blob }); return; } catch (e) { if (e && e.code === 'declined') return; } }
+    try { const a = document.createElement('a'); a.href = r.url; a.download = r.name; document.body.appendChild(a); a.click(); a.remove(); } catch (e) {}
+  };
+  window.RHR.ktp = (u, s) => { const m = member(u); if (m) { mine = true; openKTP(u); } else { $('q').value = u; $('msg').innerHTML = 'Kartu calon warga untuk <b>@' + esc(u) + '</b>. Biar resmi, komen hewanmu di Reels terbaru.'; show({ u, s, n: 0, top: false }); $('ktp').scrollIntoView({ block: 'start' }); } };
+
+  // ---------- boot: show a real card ----------
+  const want = decodeURIComponent((location.hash.match(/u=([^&]+)/) || [])[1] || '').replace(/^@/, '');
+  const startM = (want && member(want)) || member(R.top);
+  $('q').value = want && member(want) ? startM.u : '';
+  $('msg').innerHTML = want && member(want) ? foundMsg(startM) : 'Contoh dulu: kartu <b>@' + esc(R.top) + '</b>, top komen hari pertama. Ketik username IG-mu buat lihat kartumu.';
+  if (want && member(want)) mine = true;
+  show(startM).then(() => { booted = true; });
+})();
+</script>
+</body>
+</html>
